@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Xunit;
 using CowboyCafe.Data;
-/*
+
 namespace CowboyCafe.DataTests
 {
     public class TexasTripleBurgerTest
@@ -28,6 +28,7 @@ namespace CowboyCafe.DataTests
             Assert.Empty(burger.SpecialInstructions);
         }
 
+        /*
         [Fact]
         public void HoldingBunShouldAddInstruction()
         {
@@ -115,6 +116,7 @@ namespace CowboyCafe.DataTests
                 Assert.Equal("hold tomato", instruction);
             });
         }
+        */
 
         [Fact]
         public void HoldingBaconShouldAddInstruction()
@@ -137,7 +139,7 @@ namespace CowboyCafe.DataTests
                 Assert.Equal("hold egg", instruction);
             });
         }
-
+        /*
         [Fact]
         public void HoldingKetchupAndMustardShouldAddTwoInstructions()
         {
@@ -159,6 +161,6 @@ namespace CowboyCafe.DataTests
             Assert.Contains("hold cheese", burger.SpecialInstructions);
             Assert.Contains("hold pickle", burger.SpecialInstructions);
         }
+        */
     }
 }
-*/

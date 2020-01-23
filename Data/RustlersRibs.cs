@@ -7,7 +7,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class represting the Rustler's Ribs entree.
     /// </summary>
-    public class RustlerRibs
+    public class RustlersRibs
     {
         /// <summary>
         /// The price of ribs.
@@ -23,6 +23,19 @@ namespace CowboyCafe.Data
         public uint Calories
         {
             get { return 894; }
+        }
+
+        /// <summary>
+        /// Special instructions for the preparation of Rusler's Ribs.
+        /// </summary>
+        public List<string> SpecialInstructions
+        {
+            get
+            {
+                var instructions = new List<string>();
+
+                return instructions;
+            }
         }
     }
 }

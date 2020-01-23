@@ -7,7 +7,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Dakota Double Burger entree.
     /// </summary>
-    class DakotaDoubleBurger
+    public class DakotaDoubleBurger
     {
         private bool tomato = true;
         /// <summary>
@@ -58,7 +58,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the burger.
         /// </summary>
-        public List<string> SpecialInstruction
+        public List<string> SpecialInstructions
         {
             get
             {

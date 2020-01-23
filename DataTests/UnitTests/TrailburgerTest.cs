@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using Xunit;
 using CowboyCafe.Data;
-/*
+
 namespace CowboyCafe.DataTests
 {
     public class TrailBurgerTest
     {
+
         [Fact]
         public void DefaultPriceShouldBeCorrect()
         {
@@ -27,7 +28,7 @@ namespace CowboyCafe.DataTests
             var burger = new TrailBurger();
             Assert.Empty(burger.SpecialInstructions);
         }
-
+        /*
         [Fact]
         public void HoldingBunShouldAddInstruction()
         {
@@ -38,7 +39,7 @@ namespace CowboyCafe.DataTests
                 Assert.Equal("hold bun", instruction);
             });
         }
-
+        */
         [Fact]
         public void HoldingKetchupShouldAddInstruction()
         {
@@ -92,7 +93,7 @@ namespace CowboyCafe.DataTests
             Assert.Contains("hold ketchup", burger.SpecialInstructions);
             Assert.Contains("hold mustard", burger.SpecialInstructions);
         }
-
+        /*
         [Fact]
         public void HoldingBunCheeseAndPickleShouldAddThreeInstructions()
         {
@@ -104,6 +105,6 @@ namespace CowboyCafe.DataTests
             Assert.Contains("hold cheese", burger.SpecialInstructions);
             Assert.Contains("hold pickle", burger.SpecialInstructions);
         }
+        */
     }
 }
-*/

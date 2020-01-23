@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
-/*
+
 namespace CowboyCafe.DataTests
 {
     public class RustlersRibsTest
     {
+
         [Fact]
         public void DefaultPriceShouldBeCorrect()
         {
@@ -30,4 +31,3 @@ namespace CowboyCafe.DataTests
         }
     }
 }
-*/
