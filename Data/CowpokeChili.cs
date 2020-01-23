@@ -4,13 +4,13 @@ using System.Collections.Generic;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// A class representing the Cowpoke Chili entree
+    /// A class representing the Cowpoke Chili entree.
     /// </summary>
     public class CowpokeChili
     {
         private bool cheese = true;
         /// <summary>
-        /// If the chili is topped with cheese
+        /// If the chili is topped with cheese.
         /// </summary>
         public bool Cheese
         {
@@ -20,7 +20,7 @@ namespace CowboyCafe.Data
 
         private bool sourCream = true;
         /// <summary>
-        /// If the chili is topped with sour cream
+        /// If the chili is topped with sour cream.
         /// </summary>
         public bool SourCream
         {
@@ -30,7 +30,7 @@ namespace CowboyCafe.Data
 
         private bool greenOnions = true;
         /// <summary>
-        /// If the chili is topped with green onions
+        /// If the chili is topped with green onions.
         /// </summary>
         public bool GreenOnions
         {
@@ -40,7 +40,7 @@ namespace CowboyCafe.Data
 
         private bool tortillaStrips = true;
         /// <summary>
-        /// If the chili is topped with tortilla strips
+        /// If the chili is topped with tortilla strips.
         /// </summary>
         public bool TortillaStrips
         {
@@ -49,7 +49,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// The price of the chili
+        /// The price of the chili.
         /// </summary>
         public double Price
         {
@@ -60,7 +60,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// The calories of the chili
+        /// The calories of the chili.
         /// </summary>
         public uint Calories
         {
@@ -71,7 +71,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Special instructions for the preparation of the chili
+        /// Special instructions for the preparation of the chili.
         /// </summary>
         public List<string> SpecialInstructions
         {
