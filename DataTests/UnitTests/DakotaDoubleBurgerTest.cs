@@ -27,7 +27,8 @@ namespace CowboyCafe.DataTests
             var burger = new DakotaDoubleBurger();
             Assert.Empty(burger.SpecialInstructions);
         }
-        /*
+        
+        
         [Fact]
         public void HoldingBunShouldAddInstruction()
         {
@@ -38,7 +39,7 @@ namespace CowboyCafe.DataTests
                 Assert.Equal("hold bun", instruction);
             });
         }
-
+        
         [Fact]
         public void HoldingKetchupShouldAddInstruction()
         {
@@ -82,7 +83,7 @@ namespace CowboyCafe.DataTests
                 Assert.Equal("hold cheese", instruction);
             });
         }
-        */
+        
 
         [Fact]
         public void HoldingMayoShouldAddInstruction()
@@ -117,7 +118,7 @@ namespace CowboyCafe.DataTests
             });
         }
         
-        /*
+        
         [Fact]
         public void HoldingKetchupAndMustardShouldAddTwoInstructions()
         {
@@ -127,7 +128,7 @@ namespace CowboyCafe.DataTests
             Assert.Contains("hold ketchup", burger.SpecialInstructions);
             Assert.Contains("hold mustard", burger.SpecialInstructions);
         }
-
+        
         [Fact]
         public void HoldingBunCheeseAndPickleShouldAddThreeInstructions()
         {
@@ -139,6 +140,6 @@ namespace CowboyCafe.DataTests
             Assert.Contains("hold cheese", burger.SpecialInstructions);
             Assert.Contains("hold pickle", burger.SpecialInstructions);
         }
-        */
+        
     }
 }

@@ -49,6 +49,13 @@ namespace CowboyCafe.Data
             set { cheese = value; }
         }
 
+        private bool bun = true;
+        public bool Bun
+        {
+            get { return bun; }
+            set { bun = value; }
+        }
+
         /// <summary>
         /// The price of the burger.
         /// </summary>
@@ -78,6 +85,7 @@ namespace CowboyCafe.Data
                 if (!mustard) instructions.Add("hold mustard");
                 if (!pickle) instructions.Add("hold pickle");
                 if (!cheese) instructions.Add("hold cheese");
+                if (!bun) instructions.Add("hold bun");
 
                 return instructions;
             }
