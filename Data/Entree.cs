@@ -12,16 +12,16 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Gets the price of an entree
         /// </summary>
-        public double Price { get; }
+        public abstract double Price { get; }
 
         /// <summary>
         /// Gets the number of calories of an entree
         /// </summary>
-        public uint Calories { get; }
+        public abstract uint Calories { get; }
 
         /// <summary>
         /// Gets the special instructions for an entree
         /// </summary>
-        public List<string> SpecialInstructions { get;}
+        public abstract List<string> SpecialInstructions { get;}
     }
 }

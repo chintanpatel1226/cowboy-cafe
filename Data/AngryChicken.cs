@@ -5,14 +5,16 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// A class representing the Angry Chicken entree.
+    /// Author: Chintan Patel
+    /// Class: AngryChicken
+    /// Purpose: A class representing the Angry Chicken entree.
     /// </summary>
-    public class AngryChicken : Side
+    public class AngryChicken : Entree
     {
         /// <summary>
         /// The price of the Angry Chicken
         /// </summary>
-        public double Price
+        public override double Price
         {
             get { return 5.99; }
         }
@@ -20,7 +22,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The calories of the Angry Chicken
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get { return 190; }
         }
@@ -48,7 +50,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the sandwich.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

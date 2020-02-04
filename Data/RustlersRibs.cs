@@ -5,14 +5,16 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// A class represting the Rustler's Ribs entree.
+    /// Author: Chintan Patel
+    /// Class: RustlersRibs
+    /// Purpose: A class representing the Rustler's Ribs entree.
     /// </summary>
-    public class RustlersRibs
+    public class RustlersRibs : Entree
     {
         /// <summary>
         /// The price of ribs.
         /// </summary>
-        public double Price
+        public override double Price
         {
             get { return 7.50; }
         }
@@ -20,7 +22,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The calore of ribs.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get { return 894; }
         }
@@ -28,7 +30,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of Rusler's Ribs.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

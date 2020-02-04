@@ -5,9 +5,11 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// A class representing the Texas Triple Burger entree.
+    /// Author: Chintan Patel
+    /// Class: TexasTripleBurger
+    /// Purpose: A class representing the Texas Triple Burger entree.
     /// </summary>
-    public class TexasTripleBurger
+    public class TexasTripleBurger : Entree
     {
         private bool ketchup = true;
         /// <summary>
@@ -109,7 +111,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The price of the burger.
         /// </summary>
-        public double Price
+        public override double Price
         {
             get { return 6.45; }
         }
@@ -117,7 +119,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The calories of the burger.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get { return 698; }
         }
@@ -125,7 +127,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the burger.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

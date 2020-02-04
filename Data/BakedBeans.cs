@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,13 +6,13 @@ namespace CowboyCafe.Data
 {
     /// <summary>
     /// Author: Chintan Patel
-    /// Class: ChiliCheeseFries
-    /// Purpose: A class representing the Chili Cheese Fries entree.
+    /// Class: BakedBeans
+    /// Purpose: A class representing the Baked Beans entree.
     /// </summary>
-    public class ChiliCheeseFries : Side
+    public class BakedBeans : Side
     {
         /// <summary>
-        /// The price of Chili Cheese Fries based on size
+        /// The price of Baked Beans based on size
         /// </summary>
         public override double Price
         {
@@ -21,19 +21,20 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case (Size.Small):
-                        return 1.99;
+                        return 1.59;
                     case (Size.Medium):
-                        return 2.99;
+                        return 1.79;
                     case (Size.Large):
-                        return 3.99;
+                        return 1.99;
                     default:
                         throw new NotImplementedException();
                 }
             }
+            
         }
-
+        
         /// <summary>
-        /// The calories of Chili Cheese Fries based on size
+        /// The calories of Baked Beans based on size
         /// </summary>
         public override uint Calories
         {
@@ -42,16 +43,15 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case (Size.Small):
-                        return 433;
+                        return 312;
                     case (Size.Medium):
-                        return 524;
+                        return 378;
                     case (Size.Large):
-                        return 610;
+                        return 410;
                     default:
                         throw new NotImplementedException();
                 }
             }
         }
-
     }
 }
