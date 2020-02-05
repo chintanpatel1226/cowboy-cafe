@@ -1,13 +1,16 @@
-﻿using System;
+﻿/// <summary>
+/// Author: Chintan Patel
+/// Class: CIS 400
+/// Purpose: A class representing the Texas Triple Burger entree.
+/// </summary>
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Author: Chintan Patel
-    /// Class: TexasTripleBurger
-    /// Purpose: A class representing the Texas Triple Burger entree.
+    /// A class representing the Texas Triple Burger entree.
     /// </summary>
     public class TexasTripleBurger : Entree
     {

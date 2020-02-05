@@ -1,13 +1,16 @@
-﻿using System;
+﻿/// <summary>
+/// Author: Chintan Patel
+/// Class: CIS 400
+/// Purpose: A class representing the Pecos Pulled Pork entree.
+/// </summary>
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Author: Chintan Patel
-    /// Class: PecosPulledPork
-    /// Purpose: A class representing the Pecos Pulled Pork entree.
+    /// A class representing the Pecos Pulled Pork entree.
     /// </summary>
     public class PecosPulledPork : Entree
     {

@@ -1,4 +1,9 @@
-﻿using System;
+﻿/// <summary>
+/// Author: Chintan Patel
+/// Class: CIS 400
+/// Purpose: Abstract base class for Entree
+/// </summary>
+using System;
 using System.Collections.Generic;
 using System.Text;
 

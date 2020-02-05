@@ -1,13 +1,17 @@
-﻿using System;
+﻿/// <summary>
+/// Author: Nathan Bean
+/// Edited By: Chintan Patel
+/// Class: CIS 400
+/// Purpose: A class representing the Chili Cheese Fries side.
+/// </summary>
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Author: Chintan Patel
-    /// Class: ChiliCheeseFries
-    /// Purpose: A class representing the Chili Cheese Fries entree.
+    /// A class representing the Chili Cheese Fries side.
     /// </summary>
     public class ChiliCheeseFries : Side
     {

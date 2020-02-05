@@ -1,13 +1,16 @@
-﻿using System;
+﻿/// <summary>
+/// Author: Chintan Patel
+/// Class: CIS 400
+/// Purpose: A class representing the Trail Burger entree.
+/// </summary>
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Author: Chintan Patel
-    /// Class: TrailBurger
-    /// Purpose: A class representing the Trail Burger entree.
+    /// A class representing the Trail Burger entree.
     /// </summary>
     public class TrailBurger : Entree
     {

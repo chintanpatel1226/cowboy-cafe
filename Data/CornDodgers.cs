@@ -1,3 +1,8 @@
+/// <summary>
+/// Author: Chintan Patel
+/// Class: CIS 400
+/// Purpose: A class representing the Corn Dodgers side.
+/// </summary>
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -5,9 +10,7 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Author: Chintan Patel
-    /// Class: CornDodgers
-    /// Purpose: A class representing the Corn Dodgers Fries entree.
+    /// A class representing the Corn Dodgers side.
     /// </summary>
     public class CornDodgers : Side
     {

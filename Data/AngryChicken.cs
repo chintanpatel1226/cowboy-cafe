@@ -1,13 +1,16 @@
-﻿using System;
+﻿/// <summary>
+/// Author: Chintan Patel
+/// Class: CIS 400
+/// Purpose: A class representing the Angry Chicken entree.
+/// </summary>
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Author: Chintan Patel
-    /// Class: AngryChicken
-    /// Purpose: A class representing the Angry Chicken entree.
+    /// A class representing the Angry Chicken entree.
     /// </summary>
     public class AngryChicken : Entree
     {

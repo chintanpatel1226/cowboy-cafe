@@ -1,3 +1,8 @@
+/// <summary>
+/// Author: Chintan Patel
+/// Class: CIS 400
+/// Purpose: A class representing the Pan de Campo side.
+/// </summary>
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -5,9 +10,7 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Author: Chintan Patel
-    /// Class: PanDeCampo
-    /// Purpose: A class representing the Pan de Campo  entree.
+    /// A class representing the Pan de Campo side.
     /// </summary>
     public class PanDeCampo : Side
     {

@@ -1,3 +1,8 @@
+/// <summary>
+/// Author: Chintan Patel
+/// Class: CIS 400
+/// Purpose: c
+/// </summary>
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -5,9 +10,7 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Author: Chintan Patel
-    /// Class: BakedBeans
-    /// Purpose: A class representing the Baked Beans entree.
+    /// A class representing the Baked Beans entree.
     /// </summary>
     public class BakedBeans : Side
     {

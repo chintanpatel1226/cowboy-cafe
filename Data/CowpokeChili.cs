@@ -1,12 +1,16 @@
-﻿using System;
+﻿/// <summary>
+/// Author: Nathan Bean
+/// Edited By: Chintan Patel
+/// Class: CIS 400
+/// Purpose: A class representing the Cowpoke Chili entree.
+/// </summary>
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Author: Chintan Patel
-    /// Class: CowpokeChili
-    /// Purpose: A class representing the Cowpoke Chili entree.
+    /// A class representing the Cowpoke Chili entree.
     /// </summary>
     public class CowpokeChili : Entree
     {

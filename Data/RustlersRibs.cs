@@ -1,13 +1,16 @@
-﻿using System;
+﻿/// <summary>
+/// Author: Chintan Patel
+/// Class: CIS 400
+/// Purpose: A class representing the Rustler's Ribs entree.
+/// </summary>
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// Author: Chintan Patel
-    /// Class: RustlersRibs
-    /// Purpose: A class representing the Rustler's Ribs entree.
+    /// A class representing the Rustler's Ribs entree.
     /// </summary>
     public class RustlersRibs : Entree
     {
