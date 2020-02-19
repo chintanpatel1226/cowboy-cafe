@@ -3,6 +3,7 @@
 /// Class: CIS 400
 /// Purpose: A class representing the Water drink.
 /// </summary>
+using System;
 using System.Collections.Generic;
 
 namespace CowboyCafe.Data
@@ -87,6 +88,25 @@ namespace CowboyCafe.Data
                 if(lemon) instructions.Add("Add Lemon");
 
                 return instructions;
+            }
+        }
+
+        /// <summary>
+        /// Returns the human-readable name of the menu item
+        /// </summary>
+        /// <returns>The human-readble name of the menu item</returns>
+        public override string ToString()
+        {
+            switch (Size)
+            {
+                case (Size.Small):
+                    return "Small Water";
+                case (Size.Medium):
+                    return "Medium Water";
+                case (Size.Large):
+                    return "Large Water";
+                default:
+                    throw new NotImplementedException();
             }
         }
     }

@@ -56,5 +56,24 @@ namespace CowboyCafe.Data
                 }
             }
         }
+
+        /// <summary>
+        /// Returns the human-readable name of the menu item
+        /// </summary>
+        /// <returns>The human-readble name of the menu item</returns>
+        public override string ToString()
+        {
+            switch (Size)
+            {
+                case (Size.Small):
+                    return "Small Pan de Campo";
+                case (Size.Medium):
+                    return "Medium Pan de Campo";
+                case (Size.Large):
+                    return "Large Pan de Campo";
+                default:
+                    throw new NotImplementedException();
+            }
+        }
     }
 }

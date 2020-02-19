@@ -151,6 +151,13 @@ namespace CowboyCafe.Data
             }
         }
 
-
+        /// <summary>
+        /// Returns the human-readable name of the menu item
+        /// </summary>
+        /// <returns>The human-readble name of the menu item</returns>
+        public override string ToString()
+        {
+            return "Texas Triple Burger";
+        }
     }
 }

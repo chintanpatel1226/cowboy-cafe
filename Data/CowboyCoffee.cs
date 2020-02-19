@@ -102,5 +102,24 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// Returns the human-readable name of the menu item
+        /// </summary>
+        /// <returns>The human-readble name of the menu item</returns>
+        public override string ToString()
+        {
+            switch (Size)
+            {
+                case (Size.Small):
+                    return "Small Cowboy Coffee";
+                case (Size.Medium):
+                    return "Medium Cowboy Coffee";
+                case (Size.Large):
+                    return "Large Cowboy Coffee";
+                default:
+                    throw new NotImplementedException();
+            }
+        }
     }
 }
