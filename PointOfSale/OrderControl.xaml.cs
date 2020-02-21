@@ -77,5 +77,25 @@ namespace PointOfSale
             OrderListView.Items.Add(new BakedBeans());
         }
 
+        void AddJerkedSodaButton_Clicked(object sender, RoutedEventArgs e)
+        {
+            OrderListView.Items.Add(new JerkedSoda());
+        }
+
+        void AddTexasTeaButton_Clicked(object sender, RoutedEventArgs e)
+        {
+            OrderListView.Items.Add(new TexasTea());
+        }
+
+        void AddCowboyCoffeeButton_Clicked(object sender, RoutedEventArgs e)
+        {
+            OrderListView.Items.Add(new CowboyCoffee());
+        }
+
+        void AddWaterButton_Clicked(object sender, RoutedEventArgs e)
+        {
+            OrderListView.Items.Add(new Water());
+        }
+
     }
 }
