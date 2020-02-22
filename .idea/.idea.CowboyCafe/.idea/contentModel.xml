@@ -59,21 +59,36 @@
           <e p="CowboyCoffeeTest.cs" t="Include" />
           <e p="CowpokeChiliTest.cs" t="Include" />
           <e p="DakotaDoubleBurgerTest.cs" t="Include" />
+          <e p="DrinkTests.cs" t="Include" />
           <e p="EntreeTests.cs" t="Include" />
           <e p="JerkedSodaTest.cs" t="Include" />
           <e p="PanDeCampoTest.cs" t="Include" />
           <e p="PecosPulledPork.cs" t="Include" />
           <e p="RustlersRibs.cs" t="Include" />
+          <e p="SideTests.cs" t="Include" />
           <e p="TexasTeaTest.cs" t="Include" />
           <e p="TexasTripleBurgerTest.cs" t="Include" />
+          <e p="ToStringTests.cs" t="Include" />
           <e p="TrailburgerTest.cs" t="Include" />
           <e p="WaterTest.cs" t="Include" />
         </e>
       </e>
       <e p="packages" t="ExcludeRecursive" />
+      <e p="PointOfSale" t="IncludeRecursive">
+        <e p="App.xaml" t="Include" />
+        <e p="App.xaml.cs" t="Include" />
+        <e p="AssemblyInfo.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="MainWindow.xaml" t="Include" />
+        <e p="MainWindow.xaml.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="OrderControl.xaml" t="Include" />
+        <e p="OrderControl.xaml.cs" t="Include" />
+        <e p="PointOfSale.csproj" t="IncludeRecursive" />
+      </e>
       <e p="Solution Items" t="Include" />
     </e>
     <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_CowboyCafe.-1775988554.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_CowboyCafe.1375358442.00" t="ExcludeRecursive" />
   </component>
 </project>
