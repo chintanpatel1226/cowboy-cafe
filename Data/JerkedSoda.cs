@@ -99,14 +99,18 @@ namespace CowboyCafe.Data
         /// <returns>The human-readble name of the menu item</returns>
         public override string ToString()
         {
-            switch (Size)
+            switch (flavor)
             {
-                case (Size.Small):
-                    return "Small " + Flavor + " Jerked Soda";
-                case (Size.Medium):
-                    return "Medium " + Flavor + " Jerked Soda";
-                case (Size.Large):
-                    return "Large " + Flavor + " Jerked Soda";
+                case SodaFlavor.BirchBeer:
+                    return Size + " Birch Beer Jerked Soda";
+                case SodaFlavor.CreamSoda:
+                    return Size + " Cream Soda Jerked Soda";
+                case SodaFlavor.OrangeSoda:
+                    return Size + " Orange Soda Jerked Soda";
+                case SodaFlavor.RootBeer:
+                    return Size + " Root Beer Jerked Soda";
+                case SodaFlavor.Sarsparilla:
+                    return Size + " Sarsparilla Jerked Soda";
                 default:
                     throw new NotImplementedException();
             }

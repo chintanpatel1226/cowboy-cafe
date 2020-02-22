@@ -109,14 +109,12 @@ namespace CowboyCafe.Data
         /// <returns>The human-readble name of the menu item</returns>
         public override string ToString()
         {
-            switch (Size)
+            switch (decaf)
             {
-                case (Size.Small):
-                    return "Small Cowboy Coffee";
-                case (Size.Medium):
-                    return "Medium Cowboy Coffee";
-                case (Size.Large):
-                    return "Large Cowboy Coffee";
+                case true:
+                    return Size + " Decaf Cowboy Coffee";
+                case false:
+                    return Size + " Cowboy Coffee";
                 default:
                     throw new NotImplementedException();
             }
