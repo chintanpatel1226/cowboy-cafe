@@ -10,7 +10,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The number of the last order.
         /// </summary>
-        private uint lastOrderNumber;
+        private uint lastOrderNumber = 0;
 
         /// <summary>
         /// List of order items.
@@ -19,10 +19,10 @@ namespace CowboyCafe.Data
 
         public IEnumerable<IOrderItem> Items => items.ToArray();
 
-        private double subtotal;
+        private double subtotal = 0;
         public double Subtotal => subtotal;
 
-        public uint OrderNumber { get; }
+        public uint OrderNumber => lastOrderNumber++;
 
         public event PropertyChangedEventHandler PropertyChanged;
     

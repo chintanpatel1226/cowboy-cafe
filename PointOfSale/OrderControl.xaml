@@ -4,51 +4,26 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
-             mc:Ignorable="d"
-             d:DesignHeight="550" d:DesignWidth="800">
-    <UserControl.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Height" Value="50px"/>
-            <Setter Property="FontSize" Value="12"/>
-            <Setter Property="Margin" Value="4"/>
-        </Style>
-    </UserControl.Resources>
-    <Grid>
-
+             mc:Ignorable="d" 
+             d:DesignHeight="570" d:DesignWidth="800"
+             VerticalAlignment="Top" HorizontalAlignment="Left">
+    
+    <Grid Background="AliceBlue">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0">
-            <TextBlock TextAlignment ="Center" FontSize="14" Height="24">Entree</TextBlock>
-            <Button Name="AddCowpokeChiliButton" Click="AddCowpokeChiliButton_Clicked">Cowpoke Chili</Button>
-            <Button Name="AddRustlersRibsButton" Click="AddRustlersRibsButton_Clicked">Ruster's Ribs</Button>
-            <Button Name ="AddPecosPulledPorkButton" Click="AddPecosPulledPorkButton_Clicked">Pecos Pulled Pork</Button>
-            <Button Name ="AddTrailBurgerButton" Click="AddTrailBurgerButton_Clicked">Trail Burger</Button>
-            <Button Name ="AddDakotaDoubleBurgerButton" Click="AddDakotaDoubleBurgerButton_Clicked">Dakota Double Burger</Button>
-            <Button Name ="AddTexasTripleBurgerButton" Click="AddTexasTripleBurgerButton_Clicked">Texas Triple Burger</Button>
-            <Button Name ="AddAngryChickenButton" Click="AddAngryChickenButton_Clicked">Angry Chicken</Button>
-        </StackPanel>
-        <StackPanel Grid.Column="1">
-            <TextBlock TextAlignment="Center" FontSize="14" Height="24">Sides</TextBlock>
-            <Button Name="AddChiliCheeseFriesButton" Click="AddChiliCheeseFriesButton_Clicked">Chili Cheese Fries</Button>
-            <Button Name="AddCornDodgersButton" Click="AddCornerDodgersButton_Clicked">Corn Dodgers</Button>
-            <Button Name="AddPanDeCampoButton" Click="AddPanDeCampoButton_Clicked">Pan de Campo</Button>
-            <Button Name="AddBakedBeansButton" Click="AddBakedBeansButton_Clicked">Baked Beans</Button>
-        </StackPanel>
-        <StackPanel Grid.Column="2">
-            <TextBlock TextAlignment="Center" FontSize="14" Height="24">Drinks</TextBlock>
-            <Button Name="AddJerkedSodaButton" Click="AddJerkedSodaButton_Clicked">Jerked Soda</Button>
-            <Button Name="AddTexasTeaButton" Click="AddTexasTeaButton_Clicked">Texas Tea</Button>
-            <Button Name="AddCowboyCoffeeButton" Click="AddCowboyCoffeeButton_Clicked">Cowboy Coffee</Button>
-            <Button Name="AddWaterButton" Click="AddWaterButton_Clicked">Water</Button>
-        </StackPanel>
-        <StackPanel Grid.Column="3">
-            <TextBlock TextAlignment="Center" FontSize="14" Height="28">Order</TextBlock>
-            <ListView Name="OrderListView"></ListView>
-        </StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+
+        <Button Height="45" Width="125" Grid.Row="0" Grid.Column="0">Item Selection</Button>
+        <Button Height="45" Width="125" Grid.Row="0" Grid.Column="1">Cancel Order</Button>
+        <Button Height="45" Width="125" Grid.Row="0" Grid.Column="2">Complete Order</Button>
+
+        <local:MenuItemSelectionControl Margin="0,70,-340,-500" Grid.ColumnSpan="3"/>
+        <local:OrderSummaryControl Grid.Column="2" Margin="308,10,-340,-560" />
     </Grid>
 </UserControl>
