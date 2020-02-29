@@ -5,24 +5,43 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="550" d:DesignWidth="200">
+             d:DesignHeight="500" d:DesignWidth="265">
+
+    <UserControl.Resources>
+        <Style TargetType="ListBoxItem">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
+    </UserControl.Resources>
     <Grid Background="White">
-        <StackPanel>
-            <TextBlock Name="OrderBlock">Order</TextBlock>
-            <ListBox ItemsSource="{Binding Path=Items}" Height="500">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="445"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="{Binding Path=OrderNumber, StringFormat={}Order {0}}"/>
+
+        <StackPanel Grid.Row="1">
+            <ListBox ItemsSource="{Binding Path=Items}" Height="445">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
-                                <ColumnDefinition Width="25"/>
+                                <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding}"/>
+                            <TextBlock Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=Price, StringFormat=c}"/>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <TextBlock>Subtotal</TextBlock>
-            <TextBlock Text="{Binding Path=Subtotal}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2">
+            <TextBlock>Subtotal:</TextBlock>
+            <TextBox Text="{Binding Path=Subtotal, StringFormat=c, Mode=OneWay}"/>
         </StackPanel>
     </Grid>
 </UserControl>

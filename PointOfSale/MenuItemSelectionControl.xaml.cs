@@ -22,6 +22,27 @@ namespace PointOfSale
         public MenuItemSelectionControl()
         {
             InitializeComponent();
+
+            //Entrees
+            AddCowpokeChiliButton.Click += AddCowpokeChiliButton_Clicked;
+            AddRustlersRibsButton.Click += AddRustlersRibsButton_Clicked;
+            AddPecosPulledPorkButton.Click += AddPecosPulledPorkButton_Clicked;
+            AddTrailBurgerButton.Click += AddTrailBurgerButton_Clicked;
+            AddDakotaDoubleBurgerButton.Click += AddDakotaDoubleBurgerButton_Clicked;
+            AddTexasTripleBurgerButton.Click += AddTexasTripleBurgerButton_Clicked;
+            AddAngryChickenButton.Click += AddAngryChickenButton_Clicked;
+
+            //Sides
+            AddChiliCheeseFriesButton.Click += AddChiliCheeseFriesButton_Clicked;
+            AddCornDodgersButton.Click += AddCornerDodgersButton_Clicked;
+            AddPanDeCampoButton.Click += AddPanDeCampoButton_Clicked;
+            AddBakedBeansButton.Click += AddBakedBeansButton_Clicked;
+
+            //Drinks
+            AddJerkedSodaButton.Click += AddJerkedSodaButton_Clicked;
+            AddTexasTeaButton.Click += AddTexasTeaButton_Clicked;
+            AddCowboyCoffeeButton.Click += AddCowboyCoffeeButton_Clicked;
+            AddWaterButton.Click += AddWaterButton_Clicked;
         }
 
         /// <summary>

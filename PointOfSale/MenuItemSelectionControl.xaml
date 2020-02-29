@@ -23,7 +23,7 @@
 
         <StackPanel Grid.Column="0">
             <TextBlock TextAlignment ="Center" FontSize="14" Height="24">Entree</TextBlock>
-            <Button Name="AddCowpokeChiliButton" Click="AddCowpokeChiliButton_Clicked">Cowpoke Chili</Button>
+            <Button Name="AddCowpokeChiliButton">Cowpoke Chili</Button>
             <Button Name="AddRustlersRibsButton">Ruster's Ribs</Button>
             <Button Name ="AddPecosPulledPorkButton">Pecos Pulled Pork</Button>
             <Button Name ="AddTrailBurgerButton">Trail Burger</Button>

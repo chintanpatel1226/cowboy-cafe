@@ -24,6 +24,24 @@ namespace PointOfSale
             InitializeComponent();
             var order = new Order();
             this.DataContext = order;
+            ItemSelectionButton.Click += ItemSelectionButton_Clicked;
+            CancelOrderButton.Click += CancelOrderButton_Clicked;
+            CompleteOrderButton.Click += CompleteOrderButton_Clicked;
+        }
+
+        void ItemSelectionButton_Clicked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        void CancelOrderButton_Clicked(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = new Order();
+        }
+
+        void CompleteOrderButton_Clicked(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = new Order();
         }
     }
 }
