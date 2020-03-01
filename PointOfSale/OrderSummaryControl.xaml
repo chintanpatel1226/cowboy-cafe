@@ -23,7 +23,7 @@
         <TextBlock Grid.Row="0" Text="{Binding Path=OrderNumber, StringFormat={}Order {0}}"/>
 
         <StackPanel Grid.Row="1">
-            <ListBox ItemsSource="{Binding Path=Items}" Height="445">
+            <ListBox Name="OrderListBox" ItemsSource="{Binding Path=Items}" Height="445">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
