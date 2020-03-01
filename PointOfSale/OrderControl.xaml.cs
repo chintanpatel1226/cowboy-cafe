@@ -33,17 +33,21 @@ namespace PointOfSale
             InitializeComponent();
             var order = new Order();
             this.DataContext = order;
-            //ItemSelectionButton.Click += ItemSelectionButton_Clicked;
+            ItemSelectionButton.Click += ItemSelectionButton_Clicked;
             CancelOrderButton.Click += CancelOrderButton_Clicked;
             CompleteOrderButton.Click += CompleteOrderButton_Clicked;
         }
 
-        /*
+        /// <summary>
+        /// [NOT IMPLEMENTED] Displays the item selection.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void ItemSelectionButton_Clicked(object sender, RoutedEventArgs e)
         {
 
         }
-        */
+        
 
         /// <summary>
         /// Cancels the current order and creates a new order.
