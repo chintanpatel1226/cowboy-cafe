@@ -12,18 +12,18 @@
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
         </Style>
     </UserControl.Resources>
-    <Grid Background="White">
+    <Grid Background="AliceBlue">
         
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
-            <RowDefinition Height="445"/>
-            <RowDefinition Height="35"/>
+            <RowDefinition Height="460"/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="{Binding Path=OrderNumber, StringFormat={}Order {0}}"/>
+        <TextBlock Grid.Row="0" Text="{Binding Path=OrderNumber, StringFormat={}Order: {0}}"/>
 
         <StackPanel Grid.Row="1">
-            <ListBox Name="OrderListBox" ItemsSource="{Binding Path=Items}" Height="445">
+            <ListBox Name="OrderListBox" ItemsSource="{Binding Path=Items}" Height="460">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -39,9 +39,7 @@
             </ListBox>
         </StackPanel>
 
-        <StackPanel Grid.Row="2">
-            <TextBlock>Subtotal:</TextBlock>
-            <TextBox Text="{Binding Path=Subtotal, StringFormat=c, Mode=OneWay}"/>
-        </StackPanel>
+        <TextBlock Grid.Row="2" Text="{Binding Path=Subtotal, StringFormat={}Subtotal: {0:c}, Mode=OneWay}"/>
+        
     </Grid>
 </UserControl>
