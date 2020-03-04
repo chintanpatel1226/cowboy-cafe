@@ -6,14 +6,17 @@
 /// </summary>
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// A class representing the Cowpoke Chili entree.
     /// </summary>
-    public class CowpokeChili : Entree
+    public class CowpokeChili : Entree, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         private bool cheese = true;
         /// <summary>
         /// If the chili is topped with cheese.

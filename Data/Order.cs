@@ -19,6 +19,7 @@ namespace CowboyCafe.Data
         /// Invoked any time a property changes.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// List of order items.
         /// </summary>

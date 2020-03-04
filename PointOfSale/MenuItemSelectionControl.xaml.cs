@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using Extensions;
 
 namespace PointOfSale
 {
@@ -32,13 +33,13 @@ namespace PointOfSale
             InitializeComponent();
 
             //Entrees
-            AddCowpokeChiliButton.Click += AddCowpokeChiliButton_Clicked;
-            AddRustlersRibsButton.Click += AddRustlersRibsButton_Clicked;
-            AddPecosPulledPorkButton.Click += AddPecosPulledPorkButton_Clicked;
-            AddTrailBurgerButton.Click += AddTrailBurgerButton_Clicked;
-            AddDakotaDoubleBurgerButton.Click += AddDakotaDoubleBurgerButton_Clicked;
-            AddTexasTripleBurgerButton.Click += AddTexasTripleBurgerButton_Clicked;
-            AddAngryChickenButton.Click += AddAngryChickenButton_Clicked;
+            AddCowpokeChiliButton.Click += OnItemAddButton_Clicked;
+            AddRustlersRibsButton.Click += OnItemAddButton_Clicked;
+            AddPecosPulledPorkButton.Click += OnItemAddButton_Clicked;
+            AddTrailBurgerButton.Click += OnItemAddButton_Clicked;
+            AddDakotaDoubleBurgerButton.Click += OnItemAddButton_Clicked;
+            AddTexasTripleBurgerButton.Click += OnItemAddButton_Clicked;
+            AddAngryChickenButton.Click += OnItemAddButton_Clicked;
 
             //Sides
             AddChiliCheeseFriesButton.Click += AddChiliCheeseFriesButton_Clicked;
@@ -53,29 +54,31 @@ namespace PointOfSale
             AddWaterButton.Click += AddWaterButton_Clicked;
         }
 
-        /// <summary>
-        /// Adds the item "Cowpoke Chili" to the Order list view.
-        /// </summary>
-        /// <param name="sender">The user input.</param>
-        /// <param name="e">The data associated with the routed event.</param>
-        void AddCowpokeChiliButton_Clicked(object sender, RoutedEventArgs e)
+        public void OnItemAddButton_Clicked(object sender, RoutedEventArgs e)
         {
+            var orderControl = this.FindAncestor<OrderControl>();
+
             if (DataContext is Order order)
             {
-                order.Add(new CowpokeChili());
-            }
-        }
-
-        /// <summary>
-        /// Adds the item "Rustler's Ribs" to the Order list view.
-        /// </summary>
-        /// <param name="sender">The user input.</param>
-        /// <param name="e">The data associated with the routed event.</param>
-        void AddRustlersRibsButton_Clicked(object sender, RoutedEventArgs e)
-        {
-            if(DataContext is Order order)
-            {
-                order.Add(new RustlersRibs());
+                if (sender is Button button)
+                {
+                    switch (button.Tag)
+                    {
+                        case "CowpokeChili":
+                            var entree = new CowpokeChili();
+                            var screen = new CustomizeCowpokeChili();
+                            screen.DataContext = entree;
+                            order.Add(entree);
+                            orderControl.SwapScreen(screen);
+                            break;
+                        case "RustlersRibs":
+                            order.Add(new RustlersRibs());
+                            break;
+                        case "PecosPulledPork":
+                            order.Add(new PecosPulledPork());
+                            break;
+                    }
+                }
             }
         }
 
