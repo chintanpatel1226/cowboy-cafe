@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="PointOfSale.CustomizeAngryChicken"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel Background="AliceBlue">
+        <TextBlock FontSize="30" Foreground="Salmon" Text="Angry Chicken Customization." FontFamily="Baskerville Old Face"/>
+        <StackPanel Orientation="Vertical">
+            <Label FontSize="20">Bread</Label>
+            <CheckBox IsChecked="{Binding Path=Bread}" VerticalAlignment="Center"/>
+            <Label FontSize="20">Sour Cream</Label>
+            <CheckBox IsChecked="{Binding Path=Pickle}" VerticalAlignment="Center"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>
