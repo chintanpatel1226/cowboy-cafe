@@ -54,7 +54,7 @@ namespace CowboyCafe.Data
         /// </summary>
         public bool Pickle
         {
-            get { return mustard; }
+            get { return pickle; }
             set { 
                 pickle = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));

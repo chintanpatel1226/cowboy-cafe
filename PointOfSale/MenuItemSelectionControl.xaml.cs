@@ -77,7 +77,7 @@ namespace PointOfSale
                             orderControl.SwapScreen(screenPecosPulledPork);
                             break;
                         case "TrailBurger":
-                            var entreeTrailBurger = new PecosPulledPork();
+                            var entreeTrailBurger = new TrailBurger();
                             var screenTrailBurger = new CustomizeTrailBurger();
                             screenTrailBurger.DataContext = entreeTrailBurger;
                             order.Add(entreeTrailBurger);

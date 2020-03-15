@@ -49,7 +49,7 @@ namespace PointOfSale
         /// <param name="e">Event data.</param>
         void ItemSelectionButton_Clicked(object sender, RoutedEventArgs e)
         {
-
+            Container.Child = new MenuItemSelectionControl();
         }
         
 
