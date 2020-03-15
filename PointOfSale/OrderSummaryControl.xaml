@@ -30,9 +30,13 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
                             <TextBlock Text="{Binding}"/>
                             <TextBlock Grid.Column="1" HorizontalAlignment="Right" Text="{Binding Path=Price, StringFormat=c}"/>
-                            <ListView ItemsSource="{Binding Path=SpecialInstructions}"/>
+                            <ListView  Grid.Row="1" ItemsSource="{Binding Path=SpecialInstructions}"/>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

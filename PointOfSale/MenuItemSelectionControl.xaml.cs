@@ -93,60 +93,70 @@ namespace PointOfSale
                         case "TexasTripleBurger":
                             var entreeTexasTripleBurger = new TexasTripleBurger();
                             var screenTexasTripleBurger = new CustomizeTexasTripleBurger();
+                            screenTexasTripleBurger.DataContext = entreeTexasTripleBurger;
                             order.Add(entreeTexasTripleBurger);
                             orderControl.SwapScreen(screenTexasTripleBurger);
                             break;
                         case "AngryChicken":
                             var entreeAngryChicken = new AngryChicken();
                             var screenAngryChicken = new CustomizeAngryChicken();
+                            screenAngryChicken.DataContext = entreeAngryChicken;
                             order.Add(entreeAngryChicken);
                             orderControl.SwapScreen(screenAngryChicken);
                             break;
                         case "ChiliCheeseFries":
                             var sideChiliCheeseFries = new ChiliCheeseFries();
-                            var screenChiliCheeseFriese = new CustomizeChiliCheeseFries();
+                            var screenChiliCheeseFries = new CustomizeChiliCheeseFries();
+                            screenChiliCheeseFries.DataContext = sideChiliCheeseFries;
                             order.Add(sideChiliCheeseFries);
-                            orderControl.SwapScreen(screenChiliCheeseFriese);
+                            orderControl.SwapScreen(screenChiliCheeseFries);
                             break;
                         case "CornerDodgers":
                             var sideCornDodgers = new CornDodgers();
                             var screenCornDodgers = new CustomizeCornDodgers();
+                            screenCornDodgers.DataContext = sideCornDodgers;
                             order.Add(sideCornDodgers);
                             orderControl.SwapScreen(screenCornDodgers);
                             break;
                         case "PanDeCampo":
                             var sidePanDeCampo = new PanDeCampo();
                             var screenPanDeCampo = new CustomizePanDeCampo();
+                            screenPanDeCampo.DataContext = sidePanDeCampo;
                             order.Add(sidePanDeCampo);
                             orderControl.SwapScreen(screenPanDeCampo);
                             break;
                         case "BakedBeans":
                             var sideBakedBeans = new BakedBeans();
                             var screenBakedBeans = new CustomizeBakedBeans();
+                            screenBakedBeans.DataContext = sideBakedBeans;
                             order.Add(sideBakedBeans);
                             orderControl.SwapScreen(screenBakedBeans);
                             break;
                         case "JerkedSoda":
                             var drinkJerkedSoda = new JerkedSoda();
                             var screenJerkedSoda = new CustomizeJerkedSoda();
+                            screenJerkedSoda.DataContext = drinkJerkedSoda;
                             order.Add(drinkJerkedSoda);
                             orderControl.SwapScreen(screenJerkedSoda);
                             break;
                         case "TexasTea":
                             var drinkTexasTea = new TexasTea();
                             var screenTexasTea = new CustomizeTexasTea();
+                            screenTexasTea.DataContext = drinkTexasTea;
                             order.Add(drinkTexasTea);
                             orderControl.SwapScreen(screenTexasTea);
                             break;
                         case "CowboyCoffee":
                             var drinkCowboyCoffee = new CowboyCoffee();
                             var screenCowboyCoffee = new CustomizeCowboyCoffee();
+                            screenCowboyCoffee.DataContext = drinkCowboyCoffee;
                             order.Add(drinkCowboyCoffee);
                             orderControl.SwapScreen(screenCowboyCoffee);
                             break;
                         case "Water":
                             var drinkWater = new Water();
                             var screenWater = new CustomizeWater();
+                            screenWater.DataContext = drinkWater;
                             order.Add(drinkWater);
                             orderControl.SwapScreen(screenWater);
                             break;
