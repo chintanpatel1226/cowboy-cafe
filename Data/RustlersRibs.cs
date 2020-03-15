@@ -5,6 +5,7 @@
 /// </summary>
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace CowboyCafe.Data
@@ -12,8 +13,13 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Rustler's Ribs entree.
     /// </summary>
-    public class RustlersRibs : Entree
+    public class RustlersRibs : Entree, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Invoked anytime a property is changed.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// The price of ribs.
         /// </summary>
