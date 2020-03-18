@@ -37,6 +37,10 @@ namespace PointOfSale
             CompleteOrderButton.Click += CompleteOrderButton_Clicked;
         }
 
+        /// <summary>
+        /// Swaps the screens to display the proper items
+        /// </summary>
+        /// <param name="element">The container to display</param>
         public void SwapScreen(UIElement element)
         {
             Container.Child = element;
@@ -61,6 +65,7 @@ namespace PointOfSale
         void CancelOrderButton_Clicked(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
+            Container.Child = new MenuItemSelectionControl();
         }
 
         /// <summary>
@@ -71,6 +76,7 @@ namespace PointOfSale
         void CompleteOrderButton_Clicked(object sender, RoutedEventArgs e)
         {
             this.DataContext = new Order();
+            Container.Child = new MenuItemSelectionControl();
         }
     }
 }

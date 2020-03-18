@@ -111,7 +111,7 @@ namespace PointOfSale
                             order.Add(sideChiliCheeseFries);
                             orderControl.SwapScreen(screenChiliCheeseFries);
                             break;
-                        case "CornerDodgers":
+                        case "CornDodgers":
                             var sideCornDodgers = new CornDodgers();
                             var screenCornDodgers = new CustomizeCornDodgers();
                             screenCornDodgers.DataContext = sideCornDodgers;
