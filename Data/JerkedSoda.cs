@@ -5,6 +5,7 @@
 /// </summary>
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
@@ -13,6 +14,11 @@ namespace CowboyCafe.Data
     /// </summary>
     public class JerkedSoda : Drink
     {
+        /// <summary>
+        /// Invoked anytime a property is changed.
+        /// </summary>
+        public override event PropertyChangedEventHandler PropertyChanged;
+
         private SodaFlavor flavor;
         /// <summary>
         /// What flavor the Jerked Soda will contain.
@@ -20,17 +26,25 @@ namespace CowboyCafe.Data
         public SodaFlavor Flavor
         {
             get { return flavor; }
-            set { flavor = value; }
+            set { 
+                flavor = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
         
         private bool ice = true;
         /// <summary>
         /// If the Jerked Soda will have ice.
         /// </summary>
-        public bool Ice
+        public override bool Ice
         {
             get { return ice; }
-            set { ice = value; }
+            set { 
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
         
         /// <summary>

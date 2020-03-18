@@ -5,7 +5,7 @@
 /// </summary>
 using System;
 using System.Collections.Generic;
-
+using System.ComponentModel;
 namespace CowboyCafe.Data
 {
     /// <summary>
@@ -13,6 +13,11 @@ namespace CowboyCafe.Data
     /// </summary>
     public class TexasTea : Drink
     {
+        /// <summary>
+        /// Invoked anytime a property is changed.
+        /// </summary>
+        public override event PropertyChangedEventHandler PropertyChanged;
+
         private bool sweet = true;
         /// <summary>
         /// If the Texas Tea will be sweet.
@@ -20,8 +25,13 @@ namespace CowboyCafe.Data
         public bool Sweet
         {
             get { return sweet; }
-            set { sweet = value; }
+            set { 
+                sweet = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sweet"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
+
         private bool lemon = false;
         /// <summary>
         /// If the Texas Tea will have lemon.
@@ -29,17 +39,25 @@ namespace CowboyCafe.Data
         public bool Lemon
         {
             get { return lemon; }
-            set { lemon = value; }
+            set { 
+                lemon = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
         
         private bool ice = true;
         /// <summary>
         /// If the Texas Tea will have ice.
         /// </summary>
-        public bool Ice
+        public override bool Ice
         {
             get { return ice; }
-            set { ice = value; }
+            set { 
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
         
         /// <summary>
@@ -98,6 +116,7 @@ namespace CowboyCafe.Data
                 
                 if(!ice) instructions.Add("Hold Ice");
                 if(lemon) instructions.Add("Add Lemon");
+                if (!sweet) instructions.Add("Not Implemented");
 
                 return instructions;
             }

@@ -5,6 +5,7 @@
 /// </summary>
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
@@ -13,6 +14,11 @@ namespace CowboyCafe.Data
     /// </summary>
     public class CowboyCoffee : Drink
     {
+        /// <summary>
+        /// Invoked anytime a property is changed.
+        /// </summary>
+        public override event PropertyChangedEventHandler PropertyChanged;
+
         private bool roomForCream = false;
         /// <summary>
         /// If Cowboy Coffee will have room for cream.
@@ -20,7 +26,11 @@ namespace CowboyCafe.Data
         public bool RoomForCream
         {
             get { return roomForCream;}
-            set { roomForCream = value; }
+            set { 
+                roomForCream = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RoomForCream"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
 
         private bool decaf = false;
@@ -30,17 +40,25 @@ namespace CowboyCafe.Data
         public bool Decaf
         {
             get { return decaf; }
-            set { decaf = value; }
+            set { 
+                decaf = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Decaf"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
 
         private bool ice = false;
         /// <summary>
         /// If Cowboy Coffee will have ice.
         /// </summary>
-        public bool Ice
+        public override bool Ice
         {
             get { return ice; }
-            set { ice = value; }
+            set { 
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
         /// <summary>
         /// The prices of Cowboy Coffee based on size.
@@ -98,6 +116,7 @@ namespace CowboyCafe.Data
 
                 if (ice) instructions.Add("Add Ice");
                 if (roomForCream) instructions.Add("Room for Cream");
+                if (!decaf) instructions.Add("Not Implemented");
 
                 return instructions;
             }

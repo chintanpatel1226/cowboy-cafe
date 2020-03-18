@@ -4,13 +4,14 @@
 /// Purpose: A base class representing a drink
 /// </summary>
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// A base class representing drink.
     /// </summary>
-    public abstract class Drink : IOrderItem
+    public abstract class Drink : IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// The price of the drink.
@@ -35,6 +36,11 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Whether the drink will have ice. Default set to true.
         /// </summary>
-        public virtual bool Ice { get; set; } = true;
+        public abstract bool Ice { get; set; }
+
+        /// <summary>
+        /// Invoked anytime a property is changed.
+        /// </summary>
+        public abstract event PropertyChangedEventHandler PropertyChanged;
     }
 }
