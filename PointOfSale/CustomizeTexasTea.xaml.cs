@@ -10,6 +10,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CowboyCafe.Data;
+using Size = CowboyCafe.Data.Size;
 
 namespace PointOfSale
 {
@@ -21,6 +23,30 @@ namespace PointOfSale
         public CustomizeTexasTea()
         {
             InitializeComponent();
+        }
+
+        public void OnSize_Checked(object sender, RoutedEventArgs args)
+        {
+            if(DataContext is TexasTea tea)
+            {
+                if(sender is RadioButton rb)
+                {
+                    switch (rb.Tag)
+                    {
+                        case "Small":
+                            tea.Size = Size.Small;
+                            break;
+                        case "Medium":
+                            tea.Size = Size.Medium;
+                            break;
+                        case "Large":
+                            tea.Size = Size.Large;
+                            break;
+                        default:
+                            throw new NotImplementedException("Size not Avialable");
+                    }
+                }
+            }
         }
     }
 }

@@ -67,7 +67,6 @@ namespace CowboyCafe.Data
                         throw new NotImplementedException();
                 }
             }
-            
         }
         
         /// <summary>
@@ -102,6 +101,7 @@ namespace CowboyCafe.Data
                 var instructions = new List<string>();
                 
                 if(!ice) instructions.Add("Hold Ice");
+
 
                 return instructions;
             }
