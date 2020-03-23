@@ -1,4 +1,9 @@
-﻿using System;
+﻿/// <summary>
+/// Author: Chintan Patel
+/// Class: CIS 400
+/// Purpose: A class representing the interaction logic for CustomizeCornDodgers.xaml
+/// </summary>
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,11 +26,14 @@ namespace PointOfSale
     public partial class CustomizeCornDodgers : UserControl
     {
         /// <summary>
-        /// 
+        /// Constructor initializing components 
         /// </summary>
         public CustomizeCornDodgers()
         {
             InitializeComponent();
+            SmallRadioButton.Checked += OnSize_Checked;
+            MediumRadioButton.Checked += OnSize_Checked;
+            LargeRadioButton.Checked += OnSize_Checked;
         }
 
         /// <summary>

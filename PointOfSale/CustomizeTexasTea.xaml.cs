@@ -1,4 +1,9 @@
-﻿using System;
+﻿/// <summary>
+/// Author: Chintan Patel
+/// Class: CIS 400
+/// Purpose: A class representing the interaction logic for CustomizeTexasTea.xaml
+/// </summary>
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -20,15 +25,22 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeTexasTea : UserControl
     {
+        /// <summary>
+        /// Constructor initializing components
+        /// </summary>
         public CustomizeTexasTea()
         {
             InitializeComponent();
-
             SmallRadioButton.Checked += OnSize_Checked;
             MediumRadioButton.Checked += OnSize_Checked;
             LargeRadioButton.Checked += OnSize_Checked;
         }
 
+        /// <summary>
+        /// Sets the size of the drink object based on the user's choice.
+        /// </summary>
+        /// <param name="sender">The user's interaction.</param>
+        /// <param name="args">Event argument.</param>
         public void OnSize_Checked(object sender, RoutedEventArgs args)
         {
             if(DataContext is TexasTea tea)

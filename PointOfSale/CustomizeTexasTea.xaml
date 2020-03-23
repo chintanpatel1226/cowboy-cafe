@@ -31,11 +31,11 @@
         
         <TextBlock FontSize="25">Drink Sizes:</TextBlock>
 
-        <StackPanel Orientation="Vertical">
-            <RadioButton Name="SmallRadioButton" FontSize="20" Tag="Small">Small</RadioButton>
-            <RadioButton Name="MediumRadioButton" FontSize="20" Tag="Medium">Medium</RadioButton>
-            <RadioButton Name="LargeRadioButton" FontSize="20" Tag="Large">Large</RadioButton>
+        <StackPanel>
+            <RadioButton GroupName="Size" Name="SmallRadioButton" FontSize="20" Tag="Small">Small</RadioButton>
+            <RadioButton GroupName="Size" Name="MediumRadioButton" FontSize="20" Tag="Medium">Medium</RadioButton>
+            <RadioButton GroupName="Size" Name="LargeRadioButton" FontSize="20" Tag="Large">Large</RadioButton>
         </StackPanel>
-        
+
     </StackPanel>
 </UserControl>

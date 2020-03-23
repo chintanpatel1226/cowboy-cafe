@@ -1,4 +1,9 @@
-﻿using System;
+﻿/// <summary>
+/// Author: Chintan Patel
+/// Class: CIS 400
+/// Purpose: A class representing the interaction logic for CustomizeChiliCheeseFries.xaml
+/// </summary>
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;

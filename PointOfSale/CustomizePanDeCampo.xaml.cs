@@ -1,4 +1,9 @@
-﻿using System;
+﻿/// <summary>
+/// Author: Chintan Patel
+/// Class: CIS 400
+/// Purpose: A class representing the interaction logic for CustomizePanDeCampo.xaml
+/// </summary>
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -20,9 +25,15 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizePanDeCampo : UserControl
     {
+        /// <summary>
+        /// Constructor initializing components
+        /// </summary>
         public CustomizePanDeCampo()
         {
             InitializeComponent();
+            SmallRadioButton.Checked += OnSize_Checked;
+            MediumRadioButton.Checked += OnSize_Checked;
+            LargeRadioButton.Checked += OnSize_Checked;
         }
 
         /// <summary>

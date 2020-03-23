@@ -1,4 +1,9 @@
-﻿using System;
+﻿/// <summary>
+/// Author: Chintan Patel
+/// Class: CIS 400
+/// Purpose: A class representing the interaction logic for CustomizeAngryChicken.xaml
+/// </summary>
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,6 +23,9 @@ namespace PointOfSale
     /// </summary>
     public partial class CustomizeAngryChicken : UserControl
     {
+        /// <summary>
+        /// Constructor initlizaing components
+        /// </summary>
         public CustomizeAngryChicken()
         {
             InitializeComponent();

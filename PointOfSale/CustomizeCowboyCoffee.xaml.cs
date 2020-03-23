@@ -1,4 +1,9 @@
-﻿using System;
+﻿/// <summary>
+/// Author: Chintan Patel
+/// Class: CIS 400
+/// Purpose: A class representing the interaction logic for CustomizeCowboyCoffee.xaml
+/// </summary>
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -23,6 +28,9 @@ namespace PointOfSale
         public CustomizeCowboyCoffee()
         {
             InitializeComponent();
+            SmallRadioButton.Checked += OnSize_Checked;
+            MediumRadioButton.Checked += OnSize_Checked;
+            LargeRadioButton.Checked += OnSize_Checked;
         }
 
         /// <summary>
