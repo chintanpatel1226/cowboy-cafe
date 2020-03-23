@@ -11,13 +11,8 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A base class representing drink.
     /// </summary>
-    public abstract class Drink : IOrderItem, INotifyPropertyChanged
+    public abstract class Drink : IOrderItem
     {
-
-        /// <summary>
-        /// Invoked anytime a property is changed.
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// The price of the drink.
@@ -34,19 +29,10 @@ namespace CowboyCafe.Data
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
 
-        private Size size;
         /// <summary>
         /// The size of the drink. Default size set to small.
         /// </summary>
-        public virtual Size Size
-        {
-            get { return size; }
-            set
-            {
-                size = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
-            }
-        }
+        public virtual Size Size { get; set; } = Size.Small;
 
         /// <summary>
         /// Whether the drink will have ice. Default set to true.

@@ -12,12 +12,26 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Cowboy Coffee Drink.
     /// </summary>
-    public class CowboyCoffee : Drink
+    public class CowboyCoffee : Drink, INotifyPropertyChanged
     {
         /// <summary>
         /// Invoked anytime a property is changed.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
+
+        private Size size;
+        /// <summary>
+        /// The size of the drink. Default size set to small.
+        /// </summary>
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
 
         private bool roomForCream = false;
         /// <summary>
@@ -77,7 +91,7 @@ namespace CowboyCafe.Data
                     case (Size.Large):
                         return 1.60;
                     default:
-                        throw new NotImplementedException();
+                        throw new NotImplementedException("Price not available");
                 }
             }
             
@@ -100,7 +114,7 @@ namespace CowboyCafe.Data
                     case (Size.Large):
                         return 7;
                     default:
-                        throw new NotImplementedException();
+                        throw new NotImplementedException("Calories not available");
                 }
             }
         }
@@ -116,7 +130,6 @@ namespace CowboyCafe.Data
 
                 if (ice) instructions.Add("Add Ice");
                 if (roomForCream) instructions.Add("Room for Cream");
-                if (!decaf) instructions.Add("Not Implemented");
 
                 return instructions;
             }
@@ -128,14 +141,14 @@ namespace CowboyCafe.Data
         /// <returns>The human-readble name of the menu item</returns>
         public override string ToString()
         {
-            switch (decaf)
+            switch (Decaf)
             {
                 case true:
                     return Size + " Decaf Cowboy Coffee";
                 case false:
                     return Size + " Cowboy Coffee";
                 default:
-                    throw new NotImplementedException();
+                    throw new NotImplementedException("Name not available");
             }
         }
     }

@@ -11,12 +11,26 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Texas Tea drink.
     /// </summary>
-    public class TexasTea : Drink
+    public class TexasTea : Drink, INotifyPropertyChanged
     {
         /// <summary>
         /// Invoked anytime a property is changed.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
+
+        private Size size;
+        /// <summary>
+        /// The size of the drink. Default size set to small.
+        /// </summary>
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
 
         private bool sweet = true;
         /// <summary>

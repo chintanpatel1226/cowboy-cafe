@@ -31,6 +31,9 @@ namespace PointOfSale
         public CustomizeWater()
         {
             InitializeComponent();
+            SmallRadioButton.Checked += OnSize_Checked;
+            MediumRadioButton.Checked += OnSize_Checked;
+            LargeRadioButton.Checked += OnSize_Checked;
         }
 
         /// <summary>
@@ -40,20 +43,20 @@ namespace PointOfSale
         /// <param name="args">Event argument.</param>
         private void OnSize_Checked(object sender, RoutedEventArgs args)
         {
-            if (DataContext is JerkedSoda soda)
+            if (DataContext is Water water)
             {
                 if (sender is RadioButton rb)
                 {
                     switch (rb.Tag)
                     {
                         case "Small":
-                            soda.Size = Size.Small;
+                            water.Size = Size.Small;
                             break;
                         case "Medium":
-                            soda.Size = Size.Medium;
+                            water.Size = Size.Medium;
                             break;
                         case "Large":
-                            soda.Size = Size.Large;
+                            water.Size = Size.Large;
                             break;
                         default:
                             throw new NotImplementedException("Size not Avialable");

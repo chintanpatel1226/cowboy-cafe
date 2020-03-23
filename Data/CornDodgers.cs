@@ -14,6 +14,7 @@ namespace CowboyCafe.Data
     /// </summary>
     public class CornDodgers : Side
     {
+
         /// <summary>
         /// The price of Corn Dodgers based on size
         /// </summary>
