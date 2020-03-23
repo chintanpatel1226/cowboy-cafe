@@ -14,6 +14,7 @@ namespace CowboyCafe.Data
     /// </summary>
     public class BakedBeans : Side
     {
+
         /// <summary>
         /// The price of Baked Beans based on size
         /// </summary>

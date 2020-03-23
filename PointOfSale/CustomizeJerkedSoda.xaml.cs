@@ -35,7 +35,11 @@ namespace PointOfSale
             LargeRadioButton.Click += OnSize_Checked;
         }
 
-
+        /// <summary>
+        /// Sets the flavor of the drink object based on user's choice.
+        /// </summary>
+        /// <param name="sender">The user's interaction.</param>
+        /// <param name="args">Event argument.</param>
         public void OnFlavorSelection_Clicked(object sender, RoutedEventArgs args)
         {
             if (DataContext is JerkedSoda soda)
@@ -66,22 +70,27 @@ namespace PointOfSale
             }
         }
 
-        public void OnSize_Checked(object sender, RoutedEventArgs args)
+        /// <summary>
+        /// Sets the size of the drink object based on the user's choice.
+        /// </summary>
+        /// <param name="sender">The user's interaction.</param>
+        /// <param name="args">Event argument.</param>
+        private void OnSize_Checked(object sender, RoutedEventArgs args)
         {
-            if (DataContext is TexasTea tea)
+            if (DataContext is JerkedSoda soda)
             {
                 if (sender is RadioButton rb)
                 {
                     switch (rb.Tag)
                     {
                         case "Small":
-                            tea.Size = Size.Small;
+                            soda.Size = Size.Small;
                             break;
                         case "Medium":
-                            tea.Size = Size.Medium;
+                            soda.Size = Size.Medium;
                             break;
                         case "Large":
-                            tea.Size = Size.Large;
+                            soda.Size = Size.Large;
                             break;
                         default:
                             throw new NotImplementedException("Size not Avialable");

@@ -6,7 +6,6 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-
     <UserControl.Resources>
         <Style TargetType="{x:Type CheckBox}">
             <Setter Property="Margin" Value="0,10,0,0"/>
@@ -28,7 +27,7 @@
             <CheckBox Name="RootBeerCheckBox" Tag="RootBeer" Content="Root Beer"/>
             <CheckBox Name="SarsparillaCheckBox" Tag="Sarsparilla" Content="Sarsparilla"/>
         </StackPanel>
-        <TextBlock FontSize="30" Foreground="Salmon" Text="Size"  TextDecorations="Underline" FontFamily="Baskerville Old Face"/>
+        <TextBlock FontSize="25">Drink Sizes:</TextBlock>
         <StackPanel>
             <RadioButton Name="SmallRadioButton" FontSize="20" Tag="Small" Content="Small"/>
             <RadioButton Name="MediumRadioButton" FontSize="20" Tag="Medium" Content="Medium"/>

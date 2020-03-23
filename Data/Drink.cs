@@ -13,6 +13,12 @@ namespace CowboyCafe.Data
     /// </summary>
     public abstract class Drink : IOrderItem, INotifyPropertyChanged
     {
+
+        /// <summary>
+        /// Invoked anytime a property is changed.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// The price of the drink.
         /// </summary>
@@ -28,19 +34,24 @@ namespace CowboyCafe.Data
         /// </summary>
         public abstract List<string> SpecialInstructions { get; }
 
+        private Size size;
         /// <summary>
         /// The size of the drink. Default size set to small.
         /// </summary>
-        public virtual Size Size { get; set; } = Size.Small;
+        public virtual Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
+        }
 
         /// <summary>
         /// Whether the drink will have ice. Default set to true.
         /// </summary>
         public abstract bool Ice { get; set; }
 
-        /// <summary>
-        /// Invoked anytime a property is changed.
-        /// </summary>
-        public abstract event PropertyChangedEventHandler PropertyChanged;
     }
 }

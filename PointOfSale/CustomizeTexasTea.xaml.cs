@@ -23,6 +23,10 @@ namespace PointOfSale
         public CustomizeTexasTea()
         {
             InitializeComponent();
+
+            SmallRadioButton.Checked += OnSize_Checked;
+            MediumRadioButton.Checked += OnSize_Checked;
+            LargeRadioButton.Checked += OnSize_Checked;
         }
 
         public void OnSize_Checked(object sender, RoutedEventArgs args)

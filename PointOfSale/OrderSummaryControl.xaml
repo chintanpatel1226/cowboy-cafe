@@ -12,6 +12,7 @@
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
         </Style>
     </UserControl.Resources>
+    
     <Grid Background="AliceBlue">
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>

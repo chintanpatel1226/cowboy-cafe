@@ -16,7 +16,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Invoked anytime a property is changed.
         /// </summary>
-        public override event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
 
         private bool sweet = true;
         /// <summary>

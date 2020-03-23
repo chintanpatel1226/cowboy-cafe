@@ -31,7 +31,8 @@ namespace PointOfSale
         public OrderControl()
         {
             InitializeComponent();
-            this.DataContext = new Order();
+            var order = new Order();
+            this.DataContext = order;
             ItemSelectionButton.Click += ItemSelectionButton_Clicked;
             CancelOrderButton.Click += CancelOrderButton_Clicked;
             CompleteOrderButton.Click += CompleteOrderButton_Clicked;
@@ -47,7 +48,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// [NOT IMPLEMENTED] Displays the item selection.
+        /// Displays the item selection.
         /// </summary>
         /// <param name="sender">The user's interaction.</param>
         /// <param name="e">Event data.</param>

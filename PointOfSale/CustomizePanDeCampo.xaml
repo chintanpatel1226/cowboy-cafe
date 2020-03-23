@@ -8,8 +8,11 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel Background="AliceBlue">
         <TextBlock FontSize="30" Foreground="Salmon" Text="Customize Pan de Campo!" TextDecorations="Underline" FontFamily="Baskerville Old Face"/>
+        <TextBlock FontSize="25">Side Sizes:</TextBlock>
         <StackPanel Orientation="Vertical">
-            <TextBlock Text="No customizations available at the moment."/>
+            <RadioButton Name="SmallRadioButton" FontSize="20" Tag="Small">Small</RadioButton>
+            <RadioButton Name="MediumRadioButton" FontSize="20" Tag="Medium">Medium</RadioButton>
+            <RadioButton Name="LargeRadioButton" FontSize="20" Tag="Large">Large</RadioButton>
         </StackPanel>
     </StackPanel>
 </UserControl>

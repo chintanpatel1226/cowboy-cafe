@@ -45,6 +45,11 @@ namespace PointOfSale
             AddWaterButton.Click += OnItemAddButton_Clicked;
         }
 
+        /// <summary>
+        /// Creates an object 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnItemAddButton_Clicked(object sender, RoutedEventArgs e)
         {
             var orderControl = this.FindAncestor<OrderControl>();

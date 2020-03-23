@@ -63,7 +63,7 @@ namespace CowboyCafe.Data
         /// <returns>The human-readble name of the menu item</returns>
         public override string ToString()
         {
-            return Size + " Chili Cheese Fries";
+            return Size.ToString() + " Chili Cheese Fries";
         }
     }
 }
