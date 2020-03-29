@@ -11,12 +11,8 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Texas Tea drink.
     /// </summary>
-    public class TexasTea : Drink, INotifyPropertyChanged
+    public class TexasTea : Drink
     {
-        /// <summary>
-        /// Invoked anytime a property is changed.
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
 
         private Size size;
         /// <summary>
@@ -28,7 +24,7 @@ namespace CowboyCafe.Data
             set
             {
                 size = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                InvokePropertyChanged("Size");
             }
         }
 
@@ -41,8 +37,8 @@ namespace CowboyCafe.Data
             get { return sweet; }
             set { 
                 sweet = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sweet"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Sweet");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -55,8 +51,8 @@ namespace CowboyCafe.Data
             get { return lemon; }
             set { 
                 lemon = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Lemon");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
         
@@ -69,8 +65,8 @@ namespace CowboyCafe.Data
             get { return ice; }
             set { 
                 ice = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Ice");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
         
@@ -130,7 +126,7 @@ namespace CowboyCafe.Data
                 
                 if(!ice) instructions.Add("Hold Ice");
                 if(lemon) instructions.Add("Add Lemon");
-                if (!sweet) instructions.Add("Not Implemented");
+                if (!sweet) instructions.Add("Unsweetened");
 
                 return instructions;
             }

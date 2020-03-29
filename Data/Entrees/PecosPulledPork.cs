@@ -13,12 +13,8 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Pecos Pulled Pork entree.
     /// </summary>
-    public class PecosPulledPork : Entree, INotifyPropertyChanged
+    public class PecosPulledPork : Entree
     {
-        /// <summary>
-        /// Invoked anytime a property is changed.
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
 
         private bool bread = true;
         /// <summary>
@@ -29,8 +25,8 @@ namespace CowboyCafe.Data
             get { return bread; }
             set { 
                 bread = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bread"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Bread");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -43,8 +39,8 @@ namespace CowboyCafe.Data
             get { return pickle; }
             set { 
                 pickle = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Pickle");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 

@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using Extensions;
 
 namespace PointOfSale
 {
@@ -30,6 +31,41 @@ namespace PointOfSale
         public OrderSummaryControl()
         {
             InitializeComponent();
+           
+        }
+
+        private void OnItemRemoveButton_Clicked(object sender, RoutedEventArgs args)
+        {
+            if(DataContext is Order order)
+            {
+                if(sender is Button button)
+                {
+                    if(button.DataContext is IOrderItem item)
+                    {
+                        order.Remove(item);
+                    }
+                }
+            }
+        }
+
+        private void ItemSelectionChanged(object sender, RoutedEventArgs args)
+        {
+            if(DataContext is Order order)
+            {
+                if (sender is ListBox listBox)
+                {
+                    var orderControl = this.FindAncestor<OrderControl>();
+                    if (listBox.SelectedItem is IOrderItem item)
+                    {
+                        if(item is AngryChicken)
+                        {
+                            var screen = new CustomizeAngryChicken();
+                            screen.DataContext = item;
+                            orderControl?.SwapScreen(screen);
+                        }
+                    }
+                }
+            }
         }
 
     }

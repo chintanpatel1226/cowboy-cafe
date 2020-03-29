@@ -48,13 +48,13 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">The user's interaction.</param>
         /// <param name="args">Event argument.</param>
-        public void OnFlavorSelection_Clicked(object sender, RoutedEventArgs args)
+        private void OnFlavorSelection_Clicked(object sender, RoutedEventArgs args)
         {
             if (DataContext is JerkedSoda soda)
             {
-                if(sender is CheckBox checkbox)
+                if(sender is RadioButton rb)
                 {
-                    switch (checkbox.Tag)
+                    switch (rb.Tag)
                     {
                         case "BirchBeer":
                             soda.Flavor = SodaFlavor.BirchBeer;

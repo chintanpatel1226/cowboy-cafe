@@ -24,7 +24,7 @@
         <TextBlock FontSize="30" Foreground="Salmon" Text="Customize Angry Chicken!" TextDecorations="Underline" FontFamily="Baskerville Old Face"/>
         <StackPanel Orientation="Vertical">
             <CheckBox IsChecked="{Binding Path=Bread}">Bread</CheckBox>
-            <CheckBox IsChecked="{Binding Path=SourCream}">Sour Cream</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Pickle}">Pickle</CheckBox>
         </StackPanel>
     </StackPanel>
 </UserControl>

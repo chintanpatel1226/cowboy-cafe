@@ -13,13 +13,8 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Dakota Double Burger entree.
     /// </summary>
-    public class DakotaDoubleBurger : Entree, INotifyPropertyChanged
+    public class DakotaDoubleBurger : Entree
     {
-        /// <summary>
-        /// Invoked anytime a property is changed.
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
         private bool ketchup = true;
         /// <summary>
         /// If the burger is topped with ketchup.
@@ -29,8 +24,8 @@ namespace CowboyCafe.Data
             get { return ketchup; }
             set {
                 ketchup = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ketchup"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Ketchup");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -43,8 +38,8 @@ namespace CowboyCafe.Data
             get { return mustard; }
             set { 
                 mustard = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mustard"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Mustard");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -57,8 +52,8 @@ namespace CowboyCafe.Data
             get { return mustard; }
             set { 
                 pickle = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Pickle");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -71,8 +66,8 @@ namespace CowboyCafe.Data
             get { return cheese; }
             set { 
                 cheese = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Cheese");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -85,8 +80,8 @@ namespace CowboyCafe.Data
             get { return tomato; }
             set {
                 tomato = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Tomato");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -99,8 +94,8 @@ namespace CowboyCafe.Data
             get { return lettuce; }
             set { 
                 lettuce = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lettuce"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Lettuce");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -113,8 +108,8 @@ namespace CowboyCafe.Data
             get { return mayo; }
             set { 
                 mayo = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mayo"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Mayo");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -127,8 +122,8 @@ namespace CowboyCafe.Data
             get { return bun; }
             set { 
                 bun = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bun"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Bun");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 

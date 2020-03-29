@@ -52,12 +52,11 @@ namespace PointOfSale
         /// <param name="e"></param>
         public void OnItemAddButton_Clicked(object sender, RoutedEventArgs e)
         {
-            var orderControl = this.FindAncestor<OrderControl>();
-
             if (DataContext is Order order)
             {
                 if (sender is Button button)
                 {
+                    var orderControl = this.FindAncestor<OrderControl>();
                     switch (button.Tag)
                     {
                         case "CowpokeChili":

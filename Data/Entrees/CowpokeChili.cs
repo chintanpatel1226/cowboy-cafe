@@ -13,12 +13,8 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Cowpoke Chili entree.
     /// </summary>
-    public class CowpokeChili : Entree, INotifyPropertyChanged
+    public class CowpokeChili : Entree
     {
-        /// <summary>
-        /// Invoked anytime a property is changed.
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
 
         private bool cheese = true;
         /// <summary>
@@ -29,8 +25,8 @@ namespace CowboyCafe.Data
             get { return cheese; }
             set {
                 cheese = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Cheese");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -43,8 +39,8 @@ namespace CowboyCafe.Data
             get { return sourCream; }
             set { 
                 sourCream = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SourCream"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("SourCream");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -57,8 +53,8 @@ namespace CowboyCafe.Data
             get { return greenOnions; }
             set { 
                 greenOnions = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("GreenOnions"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("GreenOnions");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -71,8 +67,8 @@ namespace CowboyCafe.Data
             get { return tortillaStrips; }
             set { 
                 tortillaStrips = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TortillaStrips"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("TortillaStrips");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 

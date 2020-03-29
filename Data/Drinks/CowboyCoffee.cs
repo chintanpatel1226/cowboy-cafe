@@ -12,13 +12,8 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Cowboy Coffee Drink.
     /// </summary>
-    public class CowboyCoffee : Drink, INotifyPropertyChanged
+    public class CowboyCoffee : Drink
     {
-        /// <summary>
-        /// Invoked anytime a property is changed.
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
         private Size size;
         /// <summary>
         /// The size of the drink. Default size set to small.
@@ -29,7 +24,7 @@ namespace CowboyCafe.Data
             set
             {
                 size = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                InvokePropertyChanged("Size");
             }
         }
 
@@ -42,8 +37,8 @@ namespace CowboyCafe.Data
             get { return roomForCream;}
             set { 
                 roomForCream = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RoomForCream"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("RoomForCream");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -56,8 +51,8 @@ namespace CowboyCafe.Data
             get { return decaf; }
             set { 
                 decaf = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Decaf"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Decaf");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -70,8 +65,8 @@ namespace CowboyCafe.Data
             get { return ice; }
             set { 
                 ice = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Ice");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
         /// <summary>

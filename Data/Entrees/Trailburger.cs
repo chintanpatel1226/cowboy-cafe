@@ -29,8 +29,8 @@ namespace CowboyCafe.Data
             get { return ketchup; }
             set { 
                 ketchup = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ketchup"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Ketchup");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -43,8 +43,8 @@ namespace CowboyCafe.Data
             get { return mustard; }
             set { 
                 mustard = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mustard"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Mustard");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -57,8 +57,8 @@ namespace CowboyCafe.Data
             get { return pickle; }
             set { 
                 pickle = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Pickle");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -71,8 +71,8 @@ namespace CowboyCafe.Data
             get { return cheese; }
             set { 
                 cheese = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Cheese");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -82,8 +82,8 @@ namespace CowboyCafe.Data
             get { return bun; }
             set { 
                 bun = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bun"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Bun");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 

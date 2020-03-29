@@ -1,5 +1,6 @@
 /// <summary>
 /// Author:  Chintan Patel
+/// Reference: Nathan Bean
 /// Class: CIS 400
 /// Purpose: A base class representing a drink
 /// </summary>
@@ -11,7 +12,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A base class representing drink.
     /// </summary>
-    public abstract class Drink : IOrderItem
+    public abstract class Drink : IOrderItem, INotifyPropertyChanged
     {
 
         /// <summary>
@@ -38,6 +39,20 @@ namespace CowboyCafe.Data
         /// Whether the drink will have ice. Default set to true.
         /// </summary>
         public abstract bool Ice { get; set; }
+
+        /// <summary>
+        /// Event handler for notifiying when a property changes
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// <summary>2
+        /// Helper method to trigger PropertyChanged events
+        /// </summary>
+        /// <param name="propertyName">The name of the property.</param>
+        protected void InvokePropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
     }
 }
