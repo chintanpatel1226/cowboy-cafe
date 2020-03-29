@@ -5,9 +5,15 @@ using System.ComponentModel;
 using Xunit;
 using CowboyCafe.Data;
 
-namespace CowboyCafe.DataTests.UnitTests
+namespace CowboyCafe.DataTests
 {
     public class ChiliCheeseFriesPropertyChangedTests
     {
+        [Fact]
+        public void ChiliCheeseFriesShouldImplementINotifyPropertyChanged()
+        {
+            var fries = new ChiliCheeseFries();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(fries);
+        }
     }
 }
