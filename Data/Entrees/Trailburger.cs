@@ -13,13 +13,8 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Trail Burger entree.
     /// </summary>
-    public class TrailBurger : Entree, INotifyPropertyChanged
+    public class TrailBurger : Entree
     {
-        /// <summary>
-        /// Invoked anytime a property is changed.
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
         private bool ketchup = true;
         /// <summary>
         /// If the burger is topped with ketchup.

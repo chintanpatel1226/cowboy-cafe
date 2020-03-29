@@ -5,7 +5,7 @@ using System.ComponentModel;
 using Xunit;
 using CowboyCafe.Data;
 
-namespace CowboyCafe.DataTests.UnitTests
+namespace CowboyCafe.DataTests
 {
     public class AngryChickenPropertyChangedTests
     {
@@ -26,5 +26,34 @@ namespace CowboyCafe.DataTests.UnitTests
             });
         }
 
+        [Fact]
+        public void ChangingBreadShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var chicken = new AngryChicken();
+            Assert.PropertyChanged(chicken, "SpecialInstructions", () =>
+            {
+                chicken.Bread = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingPickleShouldInvokePropertyChangedForPickle()
+        {
+            var chicken = new AngryChicken();
+            Assert.PropertyChanged(chicken, "Pickle", () =>
+            {
+                chicken.Pickle = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingPickleShouldInvokePropertyChangedForSpecialInstructions()
+        {
+            var chicken = new AngryChicken();
+            Assert.PropertyChanged(chicken, "SpecialInstructions", () =>
+            {
+                chicken.Pickle = false;
+            });
+        }
     }
 }
