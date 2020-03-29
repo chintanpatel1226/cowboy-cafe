@@ -34,7 +34,6 @@ namespace CowboyCafe.Data
                         throw new NotImplementedException();
                 }
             }
-            
         }
         
         /// <summary>
