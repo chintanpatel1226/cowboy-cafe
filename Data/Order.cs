@@ -38,7 +38,10 @@ namespace CowboyCafe.Data
         {
             get
             {
-                subtotal = 0;
+                if(subtotal <= 0)
+                {
+                    subtotal = 0;
+                }
                 foreach(IOrderItem item in Items)
                 {
                     subtotal += item.Price;
@@ -73,7 +76,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// [NOT IMPLEMENTED] Removes an item to the order and from the total cost.
+        /// Removes an item to the order and from the total cost.
         /// </summary>
         /// <param name="item"></param>
         public void Remove(IOrderItem item)
