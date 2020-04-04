@@ -13,12 +13,8 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Angry Chicken entree.
     /// </summary>
-    public class AngryChicken : Entree, INotifyPropertyChanged
+    public class AngryChicken : Entree
     {
-        /// <summary>
-        /// Invoked anytime a property is changed.
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// The price of the Angry Chicken
@@ -45,8 +41,8 @@ namespace CowboyCafe.Data
             get { return bread; }
             set { 
                 bread = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bread"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Bread");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -59,8 +55,8 @@ namespace CowboyCafe.Data
             get { return pickle; }
             set { 
                 pickle = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Pickle");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 

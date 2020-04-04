@@ -34,6 +34,11 @@ namespace PointOfSale
            
         }
 
+        /// <summary>
+        /// Removes the instance of an item
+        /// </summary>
+        /// <param name="sender">The user's interaction..</param>
+        /// <param name="args">Argument data.</param>
         private void OnItemRemoveButton_Clicked(object sender, RoutedEventArgs args)
         {
             if(DataContext is Order order)
@@ -48,6 +53,11 @@ namespace PointOfSale
             }
         }
 
+        /// <summary>
+        /// Swaps to an instance of an order already created.
+        /// </summary>
+        /// <param name="sender">The user's interaction.</param>
+        /// <param name="args">Argument data.</param>
         private void ItemSelectionChanged(object sender, RoutedEventArgs args)
         {
             if(DataContext is Order order)

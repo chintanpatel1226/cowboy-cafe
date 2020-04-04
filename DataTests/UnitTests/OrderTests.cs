@@ -6,7 +6,7 @@ using Xunit;
 using CowboyCafe.Data;
 using System.Linq;
 
-namespace CowboyCafe.DataTests
+namespace UnitTests
 {
     class MockOrderItem : IOrderItem
     {

@@ -17,6 +17,21 @@ namespace CowboyCafe.Data
     public abstract class Side : IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
+        /// Gets the price of the side
+        /// </summary>
+        public abstract double Price { get; }
+
+        /// <summary>
+        /// Gets the calories of the entree
+        /// </summary>
+        public abstract uint Calories { get; }
+
+        /// <summary>
+        /// Special instructions on building a Side
+        /// </summary>
+        public List<string> SpecialInstructions => new List<string>();
+
+        /// <summary>
         /// Invoked anytime a property is changed.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
@@ -34,20 +49,5 @@ namespace CowboyCafe.Data
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
             }
         }
-
-        /// <summary>
-        /// Gets the price of the side
-        /// </summary>
-        public abstract double Price { get; }
-
-        /// <summary>
-        /// Gets the calories of the entree
-        /// </summary>
-        public abstract uint Calories { get; }
-
-        /// <summary>
-        /// Special instructions on building a Side
-        /// </summary>
-        public List<string> SpecialInstructions => new List<string>();
     }
 }
