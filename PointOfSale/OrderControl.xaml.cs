@@ -25,14 +25,14 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderControl : UserControl
     {
+        private Order order = new Order();
         /// <summary>
         /// Initializes components of the class and creates an instance of the order class.
         /// </summary>
         public OrderControl()
         {
             InitializeComponent();
-            var order = new Order();
-            this.DataContext = order;
+            DataContext = order;
             ItemSelectionButton.Click += ItemSelectionButton_Clicked;
             CancelOrderButton.Click += CancelOrderButton_Clicked;
             CompleteOrderButton.Click += CompleteOrderButton_Clicked;
@@ -76,8 +76,7 @@ namespace PointOfSale
         /// <param name="e">Event data.</param>
         void CompleteOrderButton_Clicked(object sender, RoutedEventArgs e)
         {
-            this.DataContext = new Order();
-            Container.Child = new MenuItemSelectionControl();
+            Container.Child = new TransactionControl();
         }
     }
 }
