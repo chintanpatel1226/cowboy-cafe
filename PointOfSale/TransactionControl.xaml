@@ -5,11 +5,21 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="600">
+             Height="450" Width="750"
+             d:DesignHeight="450" d:DesignWidth="750">
 
     <UserControl.Resources>
         <Style TargetType="ListBoxItem">
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="50px"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Margin" Value="4"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Margin" Value="4"/>
         </Style>
     </UserControl.Resources>
 
@@ -19,11 +29,12 @@
             <ColumnDefinition Width="330"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
-        <TextBlock Text="{Binding Path=OrderNumber, StringFormat={}Order: {0}}"/>
-        
-        <ListBox Name="OrderListBox" ItemsSource="{Binding Path=Items}" Height="400" Width="280
-                 ">
+        <ListBox Name="OrderListBox" ItemsSource="{Binding Path=Items}" Height="400" Width="280" Grid.RowSpan="2">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -42,5 +53,18 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="{Binding Path=OrderNumber, StringFormat={}Order: {0}}"/>
+            <TextBlock Text="{Binding Path=Subtotal, StringFormat={}Subtotal: {0:c}, Mode=OneWay}"/>
+            <TextBlock Text="{Binding Path=Total, StringFormat={}Total: {0:c}, Mode=OneWay}"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">
+            <Button Height="50" Width="120">Cash</Button>
+            <Button Height="50" Width="120">Credit</Button>
+            <Button Height="50" Width="120">Cancel</Button>
+        </StackPanel>
+        
     </Grid>
 </UserControl>
