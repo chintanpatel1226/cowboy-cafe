@@ -5,8 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             Height="450" Width="750"
-             d:DesignHeight="450" d:DesignWidth="750">
+             d:DesignHeight="600" d:DesignWidth="900">
 
     <UserControl.Resources>
         <Style TargetType="ListBoxItem">
@@ -17,12 +16,7 @@
             <Setter Property="FontSize" Value="12"/>
             <Setter Property="Margin" Value="4"/>
         </Style>
-        <Style TargetType="TextBlock">
-            <Setter Property="FontSize" Value="12"/>
-            <Setter Property="Margin" Value="4"/>
-        </Style>
     </UserControl.Resources>
-
 
     <Grid Background="AliceBlue">
         <Grid.ColumnDefinitions>
@@ -55,15 +49,15 @@
         </ListBox>
 
         <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="{Binding Path=OrderNumber, StringFormat={}Order: {0}}"/>
-            <TextBlock Text="{Binding Path=Subtotal, StringFormat={}Subtotal: {0:c}, Mode=OneWay}"/>
-            <TextBlock Text="{Binding Path=Total, StringFormat={}Total: {0:c}, Mode=OneWay}"/>
+            <TextBlock FontSize="24" Text="{Binding Path=OrderNumber, StringFormat={}Order: {0}}"/>
+            <TextBlock FontSize="24" Text="{Binding Path=Subtotal, StringFormat={}Subtotal: {0:c}, Mode=OneWay}"/>
+            <TextBlock FontSize="24" Text="{Binding Path=TotalWithTax, StringFormat={}Total: {0:c}, Mode=OneWay}"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">
             <Button Height="50" Width="120">Cash</Button>
             <Button Height="50" Width="120">Credit</Button>
-            <Button Height="50" Width="120">Cancel</Button>
+            <Button Name="CancelOrderButton" Click="CancelOrderButton_Clicked" Height="50" Width="120">Cancel</Button>
         </StackPanel>
         
     </Grid>

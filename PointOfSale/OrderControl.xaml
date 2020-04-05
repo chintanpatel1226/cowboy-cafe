@@ -4,8 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
-             mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="900">
+             mc:Ignorable="d"
+             Height="600" Width="1000"
+             d:DesignHeight="600" d:DesignWidth="1000">
 
     <Grid Background="AliceBlue">
         <Grid.ColumnDefinitions>

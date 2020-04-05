@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PointOfSale"
         mc:Ignorable="d"
-        Title="Cowboy Cafe Point of Sale" Height="600" Width="850">
+        Title="Cowboy Cafe Point of Sale" Height="600" Width="1000">
 
     <Grid Background="AliceBlue">
         <DockPanel>

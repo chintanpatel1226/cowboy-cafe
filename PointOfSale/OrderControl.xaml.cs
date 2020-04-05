@@ -76,7 +76,12 @@ namespace PointOfSale
         /// <param name="e">Event data.</param>
         void CompleteOrderButton_Clicked(object sender, RoutedEventArgs e)
         {
-            SwapScreen(new TransactionControl());
+            var screen = new TransactionControl();
+            if (DataContext is Order order)
+            {
+                screen.DataContext = order;
+                this.Content = screen;
+            }
         }
     }
 }

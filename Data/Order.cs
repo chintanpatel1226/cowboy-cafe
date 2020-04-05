@@ -50,6 +50,19 @@ namespace CowboyCafe.Data
             }
         }
 
+        private double tax = 0.16;
+        /// <summary>
+        /// The total with tax.
+        /// </summary>
+        public double TotalWithTax
+        {
+            get
+            {
+                double val = Subtotal * tax;
+                return Subtotal + val;
+            }
+        }
+
         /// <summary>
         /// The base number that starts as the order number.
         /// </summary>

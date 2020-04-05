@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for TransactionControl.xaml
+    /// Interaction logic for CashControl.xaml
     /// </summary>
-    public partial class TransactionControl : UserControl
+    public partial class CashControl : UserControl
     {
-        public TransactionControl()
+        public CashControl()
         {
             InitializeComponent();
         }
