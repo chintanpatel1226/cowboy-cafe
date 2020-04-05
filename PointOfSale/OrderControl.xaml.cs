@@ -25,13 +25,13 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderControl : UserControl
     {
-        private Order order = new Order();
         /// <summary>
         /// Initializes components of the class and creates an instance of the order class.
         /// </summary>
         public OrderControl()
         {
             InitializeComponent();
+            var order = new Order();
             DataContext = order;
             ItemSelectionButton.Click += ItemSelectionButton_Clicked;
             CancelOrderButton.Click += CancelOrderButton_Clicked;

@@ -39,7 +39,7 @@
                             <ListView Grid.Row="1" BorderThickness="0" ItemsSource="{Binding Path=SpecialInstructions}"/>
                             <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
                                 <TextBlock Text="{Binding Path=Price, StringFormat=c}" Margin="0,0,5,0" />
-                                <Button Name="RemoveItemButton" Click="OnItemRemoveButton_Clicked" Background="Red" Height="20" Width="20">X</Button>
+                                <Button Name="RemoveItemButton" Click="OnItemRemoveButton_Clicked" VerticalAlignment="Center" Background="Red" Height="20" Width="20">X</Button>
                             </StackPanel>
                         </Grid>
                     </DataTemplate>

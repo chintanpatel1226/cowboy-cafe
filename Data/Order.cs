@@ -38,11 +38,11 @@ namespace CowboyCafe.Data
         {
             get
             {
-                if(subtotal <= 0)
+                if (subtotal <= 0)
                 {
                     subtotal = 0;
                 }
-                foreach(IOrderItem item in Items)
+                foreach (IOrderItem item in Items)
                 {
                     subtotal += item.Price;
                 }
@@ -66,13 +66,13 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The base number that starts as the order number.
         /// </summary>
-        static private uint lastOrderNumber = 1;
-        
+        static private uint lastOrderNumber = 0;
+
         /// <summary>
         /// The number of the last order which increments with the creation of a new order.
         /// </summary>
-        public uint OrderNumber => lastOrderNumber++;
-        
+        public uint OrderNumber => lastOrderNumber;
+
         /// <summary>
         /// Adds an item to the order with the total cost.
         /// </summary>
@@ -80,7 +80,7 @@ namespace CowboyCafe.Data
         public void Add(IOrderItem item)
         {
             items.Add(item);
-            if(item is INotifyPropertyChanged pcitem)
+            if (item is INotifyPropertyChanged pcitem)
             {
                 pcitem.PropertyChanged += OnItemChanged;
             }
@@ -106,10 +106,18 @@ namespace CowboyCafe.Data
         public void OnItemChanged(object sender, PropertyChangedEventArgs e)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-            if(e.PropertyName == "Price")
+            if (e.PropertyName == "Price")
             {
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
             }
+        }
+
+        /// <summary>
+        /// Public constructor
+        /// </summary>
+        public Order()
+        {
+            lastOrderNumber++;
         }
     }
 }
