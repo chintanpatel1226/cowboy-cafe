@@ -36,18 +36,18 @@ namespace CowboyCafe.Data
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private Size size;
         /// <summary>
         /// The size of the drink. Default size set to small.
         /// </summary>
-        public virtual Size Size
+        public virtual Size Size { get; set; } = Size.Small;
+
+        /// <summary>2
+        /// Helper method to trigger PropertyChanged events
+        /// </summary>
+        /// <param name="propertyName">The name of the property.</param>
+        protected void InvokePropertyChanged(string propertyName)
         {
-            get { return size; }
-            set
-            {
-                size = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

@@ -57,6 +57,23 @@ namespace CowboyCafe.Data
             }
         }
 
+
+        private Size size;
+        /// <summary>
+        /// The size of the side. Default size set to small.
+        /// </summary>
+        public Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                InvokePropertyChanged("Price");
+                InvokePropertyChanged("Calories");
+                InvokePropertyChanged("Size");
+            }
+        }
+
         /// <summary>
         /// Returns the human-readable name of the menu item
         /// </summary>

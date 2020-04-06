@@ -11,9 +11,9 @@
         <TextBlock FontSize="30" Foreground="Salmon" Text="Customize Baked Beans!" TextDecorations="Underline" FontFamily="Baskerville Old Face"/>
         <TextBlock FontSize="25">Side Sizes:</TextBlock>
         <StackPanel Orientation="Vertical">
-            <RadioButton GroupName="Size" Name="SmallRadioButton" FontSize="20" Tag="Small">Small</RadioButton>
-            <RadioButton GroupName="Size" Name="MediumRadioButton" FontSize="20" Tag="Medium">Medium</RadioButton>
-            <RadioButton GroupName="Size" Name="LargeRadioButton" FontSize="20" Tag="Large">Large</RadioButton>
+            <RadioButton GroupName="SizeButtons" Name="SmallRadioButton" FontSize="20" Tag="Small">Small</RadioButton>
+            <RadioButton GroupName="SizeButtons" Name="MediumRadioButton" FontSize="20" Tag="Medium">Medium</RadioButton>
+            <RadioButton GroupName="SizeButtons" Name="LargeRadioButton" FontSize="20" Tag="Large">Large</RadioButton>
         </StackPanel>
     </StackPanel>
 </UserControl>

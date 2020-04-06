@@ -31,9 +31,11 @@ namespace PointOfSale
         public CustomizeBakedBeans()
         {
             InitializeComponent();
+            
             SmallRadioButton.Checked += OnSize_Checked;
             MediumRadioButton.Checked += OnSize_Checked;
             LargeRadioButton.Checked += OnSize_Checked;
+
         }
 
         /// <summary>

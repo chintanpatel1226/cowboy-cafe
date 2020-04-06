@@ -24,6 +24,8 @@ namespace CowboyCafe.Data
             set
             {
                 size = value;
+                InvokePropertyChanged("Price");
+                InvokePropertyChanged("Calories");
                 InvokePropertyChanged("Size");
             }
         }

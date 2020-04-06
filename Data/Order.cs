@@ -30,7 +30,6 @@ namespace CowboyCafe.Data
         /// </summary>
         public IEnumerable<IOrderItem> Items => items.ToArray();
 
-        private double subtotal;
         /// <summary>
         /// The subtotal of the items ordered.
         /// </summary>
@@ -38,6 +37,7 @@ namespace CowboyCafe.Data
         {
             get
             {
+                double subtotal = 0;
                 if (subtotal <= 0)
                 {
                     subtotal = 0;
@@ -58,8 +58,7 @@ namespace CowboyCafe.Data
         {
             get
             {
-                double val = Subtotal * tax;
-                return Subtotal + val;
+                return Subtotal + (Subtotal * tax);
             }
         }
 
@@ -103,6 +102,11 @@ namespace CowboyCafe.Data
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
 
+        /// <summary>
+        /// Invokes item changes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void OnItemChanged(object sender, PropertyChangedEventArgs e)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
@@ -110,6 +114,45 @@ namespace CowboyCafe.Data
             {
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
             }
+        }
+
+        /// <summary>
+        /// Prints the receipt.
+        /// </summary>
+        /// <param name="cash"></param>
+        /// <param name="paid"></param>
+        /// <param name="change"></param>
+        /// <returns></returns>
+        public string Receipt(bool cash, double paid, double change)
+        {
+            string receipt = "";
+            receipt += OrderNumber + "\n";
+            receipt += DateTime.Now.ToString() + "\n\n";
+            foreach (IOrderItem item in Items)
+            {
+                receipt += string.Format("{0}   ${1:#.00}\n", item.ToString(), item.Price);
+                foreach (string instruction in item.SpecialInstructions)
+                {
+                    receipt += "   " + instruction + "\n";
+                }
+            }
+            receipt += "\n\n";
+            receipt += string.Format("Subtotal   ${0:#.00}\n", Subtotal);
+            receipt += string.Format("Total      ${0:#.00}\n", TotalWithTax);
+            if (cash)
+            {
+                receipt += string.Format("\nTotal Paid     ${0:#.00}\n", paid);
+                receipt += string.Format("Total Change   ${0:#.00}\n", change);
+                receipt += string.Format("Tendered       ${0:#.00}\n", paid - change);
+                receipt += "CASH TENDERED\n\n";
+            }
+            else
+            {
+                receipt += string.Format("Tendered   ${0:#.00}\n", TotalWithTax);
+                receipt += "CREDIT TENDERED\n\n";
+            }
+            receipt += "------------------------------\n\n";
+            return receipt;
         }
 
         /// <summary>

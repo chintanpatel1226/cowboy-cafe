@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using CashRegister;
 
 namespace PointOfSale
 {
@@ -19,6 +20,11 @@ namespace PointOfSale
     /// </summary>
     public partial class TransactionControl : UserControl
     {
+
+        private CardTerminal cardTerminal = new CardTerminal();
+
+        private ReceiptPrinter receiptPrinter = new ReceiptPrinter();
+
         public TransactionControl()
         {
             InitializeComponent();
@@ -29,14 +35,49 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">The user's interaction.</param>
         /// <param name="e">Event data.</param>
-        void CancelOrderButton_Clicked(object sender, RoutedEventArgs e)
+        private void CancelOrderButton_Clicked(object sender, RoutedEventArgs e)
         {
             var screen = new OrderControl();
+            this.Content = screen;
+        }
+
+        public void CreditPaymentButton_Clicked(object sender, RoutedEventArgs e)
+        {
+            FrameworkElement screen = null;
             if (DataContext is Order order)
             {
-                screen.DataContext = order;
-                this.Content = screen;
+                switch (cardTerminal.ProcessTransaction(order.TotalWithTax))
+                {
+                    case ResultCode.Success:
+                        //receiptPrinter.Print(order.Receipt(false, order.));
+                        screen = new OrderControl();
+                        this.Content = screen;
+                        break;
+                    case ResultCode.InsufficentFunds:
+                        screen = new TransactionControl();
+                        screen.DataContext = order;
+                        this.Content = screen;
+                        break;
+                    case ResultCode.CancelledCard:
+                        screen = new TransactionControl();
+                        screen.DataContext = order;
+                        this.Content = screen;
+                        break;
+                    case ResultCode.ReadError:
+                        screen = new TransactionControl();
+                        screen.DataContext = order;
+                        this.Content = screen;
+                        break;
+                    case ResultCode.UnknownErrror:
+                        screen = new TransactionControl();
+                        screen.DataContext = order;
+                        this.Content = screen;
+                        break;
+                    default:
+                        throw new NotImplementedException("No results.");
+                }
             }
         }
+        
     }
 }
