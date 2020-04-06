@@ -15,12 +15,12 @@ namespace PointOfSale
     public class CashRegisterModelView : INotifyPropertyChanged
     {
         /// <summary>
-        /// Notifies of property changed events
+        /// Notifies of property changed events.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
-        /// The CashDrawer this class uses
+        /// The CashDrawer this class uses.
         /// </summary>
         static CashDrawer drawer = new CashDrawer();
 

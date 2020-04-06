@@ -25,9 +25,14 @@ namespace PointOfSale
     /// </summary>
     public partial class TransactionControl : UserControl
     {
-
+        /// <summary>
+        /// Card terminal storing the process of the transaction.
+        /// </summary>
         private CardTerminal cardTerminal = new CardTerminal();
 
+        /// <summary>
+        /// Receipt printer to store the user's order.
+        /// </summary>
         private ReceiptPrinter receiptPrinter = new ReceiptPrinter();
 
         /// <summary>
