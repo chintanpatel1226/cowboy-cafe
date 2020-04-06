@@ -1,4 +1,10 @@
-﻿using System;
+﻿/// <summary>
+/// Author: Chintan Patel
+/// Reference: Nathan Bean
+/// Class: CIS 400
+/// Purpose: A class representing the CoinControl.xaml class.
+/// </summary>
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -10,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using CashRegister;
 
 namespace PointOfSale
 {
@@ -18,9 +25,51 @@ namespace PointOfSale
     /// </summary>
     public partial class CoinControl : UserControl
     {
+        /// <summary>
+        /// The DependencyProperty for the DenominationProperty
+        /// </summary>
+        public static readonly DependencyProperty DenominationProperty = DependencyProperty.Register(
+            "Denomination",
+            typeof(Coins),
+            typeof(CoinControl),
+            new PropertyMetadata(Coins.Penny)
+            );
+
+        /// <summary>
+        /// The Denomination this control displays and modifies
+        /// </summary>
+        public Coins Denomination
+        {
+            get => (Coins)GetValue(DenominationProperty);
+            set => SetValue(DenominationProperty, value);
+        }
+
+        public static readonly DependencyProperty QuantityProperty = DependencyProperty.Register(
+            "Quantity",
+            typeof(int),
+            typeof(CoinControl),
+            new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault)
+            );
+
+        public int Quantity
+        {
+            get => (int)GetValue(QuantityProperty);
+            set => SetValue(QuantityProperty, value);
+        }
+
         public CoinControl()
         {
             InitializeComponent();
+        }
+
+        public void OnIncreaseClicked(object sender, RoutedEventArgs e)
+        {
+            Quantity++;
+        }
+
+        public void OnDecreaseClicked(object sender, RoutedEventArgs e)
+        {
+            Quantity--;
         }
     }
 }

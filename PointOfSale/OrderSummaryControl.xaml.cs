@@ -60,100 +60,101 @@ namespace PointOfSale
         /// <param name="args">Argument data.</param>
         private void ItemSelectionChanged(object sender, RoutedEventArgs args)
         {
-            if(DataContext is Order order)
+            if (DataContext is Order order)
             {
                 if (sender is ListBox listBox)
                 {
                     var orderControl = this.FindAncestor<OrderControl>();
                     if (listBox.SelectedItem is IOrderItem item)
                     {
+                        FrameworkElement screen = null;
                         if (item is AngryChicken)
                         {
-                            var screen = new CustomizeAngryChicken();
+                            screen = new CustomizeAngryChicken();
                             screen.DataContext = item;
                             orderControl?.SwapScreen(screen);
                         }
-                        else if(item is CowpokeChili)
+                        else if (item is CowpokeChili)
                         {
-                            var screen = new CustomizeCowpokeChili();
+                            screen = new CustomizeCowpokeChili();
                             screen.DataContext = item;
                             orderControl?.SwapScreen(screen);
                         }
                         else if (item is DakotaDoubleBurger)
                         {
-                            var screen = new CustomizeDakotaDoubleBurger();
+                            screen = new CustomizeDakotaDoubleBurger();
                             screen.DataContext = item;
                             orderControl?.SwapScreen(screen);
                         }
                         else if (item is PecosPulledPork)
                         {
-                            var screen = new CustomizePecosPulledPork();
+                            screen = new CustomizePecosPulledPork();
                             screen.DataContext = item;
                             orderControl?.SwapScreen(screen);
                         }
                         else if (item is RustlersRibs)
                         {
-                            var screen = new CustomizeRustlersRibs();
+                            screen = new CustomizeRustlersRibs();
                             screen.DataContext = item;
                             orderControl?.SwapScreen(screen);
                         }
                         else if (item is TexasTripleBurger)
                         {
-                            var screen = new CustomizeTexasTripleBurger();
+                            screen = new CustomizeTexasTripleBurger();
                             screen.DataContext = item;
                             orderControl?.SwapScreen(screen);
                         }
                         else if (item is TrailBurger)
                         {
-                            var screen = new CustomizeTrailBurger();
+                            screen = new CustomizeTrailBurger();
                             screen.DataContext = item;
                             orderControl?.SwapScreen(screen);
                         }
                         else if (item is BakedBeans)
                         {
-                            var screen = new CustomizeBakedBeans();
+                            screen = new CustomizeBakedBeans();
                             screen.DataContext = item;
                             orderControl?.SwapScreen(screen);
                         }
                         else if (item is ChiliCheeseFries)
                         {
-                            var screen = new CustomizeChiliCheeseFries();
+                            screen = new CustomizeChiliCheeseFries();
                             screen.DataContext = item;
                             orderControl?.SwapScreen(screen);
                         }
                         else if (item is CornDodgers)
                         {
-                            var screen = new CustomizeCornDodgers();
+                            screen = new CustomizeCornDodgers();
                             screen.DataContext = item;
                             orderControl?.SwapScreen(screen);
                         }
                         else if (item is PanDeCampo)
                         {
-                            var screen = new CustomizePanDeCampo();
+                            screen = new CustomizePanDeCampo();
                             screen.DataContext = item;
                             orderControl?.SwapScreen(screen);
                         }
                         else if (item is CowboyCoffee)
                         {
-                            var screen = new CustomizeCowboyCoffee();
+                            screen = new CustomizeCowboyCoffee();
                             screen.DataContext = item;
                             orderControl?.SwapScreen(screen);
                         }
                         else if (item is JerkedSoda)
                         {
-                            var screen = new CustomizeJerkedSoda();
+                            screen = new CustomizeJerkedSoda();
                             screen.DataContext = item;
                             orderControl?.SwapScreen(screen);
                         }
                         else if (item is TexasTea)
                         {
-                            var screen = new CustomizeTexasTea();
+                            screen = new CustomizeTexasTea();
                             screen.DataContext = item;
                             orderControl?.SwapScreen(screen);
                         }
                         else if (item is Water)
                         {
-                            var screen = new CustomizeWater();
+                            screen = new CustomizeWater();
                             screen.DataContext = item;
                             orderControl?.SwapScreen(screen);
                         }

@@ -1,4 +1,9 @@
-﻿using System;
+﻿/// <summary>
+/// Author: Chintan Patel
+/// Class: CIS 400
+/// Purpose: A class representing the TransactionControl.xaml class.
+/// </summary>
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -25,6 +30,9 @@ namespace PointOfSale
 
         private ReceiptPrinter receiptPrinter = new ReceiptPrinter();
 
+        /// <summary>
+        /// Public constructor.
+        /// </summary>
         public TransactionControl()
         {
             InitializeComponent();
@@ -41,7 +49,12 @@ namespace PointOfSale
             this.Content = screen;
         }
 
-        public void CreditPaymentButton_Clicked(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Allows the user to pay with credit.
+        /// </summary>
+        /// <param name="sender">The user's interaction.</param>
+        /// <param name="e">Event data.</param>
+        private void CreditPaymentButton_Clicked(object sender, RoutedEventArgs e)
         {
             FrameworkElement screen = null;
             if (DataContext is Order order)
@@ -49,32 +62,35 @@ namespace PointOfSale
                 switch (cardTerminal.ProcessTransaction(order.TotalWithTax))
                 {
                     case ResultCode.Success:
-                        //receiptPrinter.Print(order.Receipt(false, order.));
+                        receiptPrinter.Print(order.Receipt(false, 0, 0));
+                        MessageBox.Show("Transaction Was a success.");
                         screen = new OrderControl();
                         this.Content = screen;
                         break;
                     case ResultCode.InsufficentFunds:
+                        MessageBox.Show("Insufficient Funds.");
                         screen = new TransactionControl();
                         screen.DataContext = order;
                         this.Content = screen;
                         break;
                     case ResultCode.CancelledCard:
+                        MessageBox.Show("Card Denied.");
                         screen = new TransactionControl();
                         screen.DataContext = order;
                         this.Content = screen;
                         break;
                     case ResultCode.ReadError:
+                        MessageBox.Show("Error reading card.");
                         screen = new TransactionControl();
                         screen.DataContext = order;
                         this.Content = screen;
                         break;
                     case ResultCode.UnknownErrror:
+                        MessageBox.Show("Unknown Error.");
                         screen = new TransactionControl();
                         screen.DataContext = order;
                         this.Content = screen;
                         break;
-                    default:
-                        throw new NotImplementedException("No results.");
                 }
             }
         }

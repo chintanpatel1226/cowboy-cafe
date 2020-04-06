@@ -1,4 +1,10 @@
-﻿using System;
+﻿/// <summary>
+/// Author: Chintan Patel
+/// Reference: Nathan Bean
+/// Class: CIS 400
+/// Purpose: A class representing the BillControl.xaml class.
+/// </summary>
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;

@@ -119,7 +119,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Prints the receipt.
         /// </summary>
-        /// <param name="cash"></param>
+        /// <param name="cash">Whether the cash.</param>
         /// <param name="paid"></param>
         /// <param name="change"></param>
         /// <returns></returns>

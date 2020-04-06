@@ -31,6 +31,10 @@ namespace PointOfSale
             SmallRadioButton.Checked += OnSize_Checked;
             MediumRadioButton.Checked += OnSize_Checked;
             LargeRadioButton.Checked += OnSize_Checked;
+
+            SmallRadioButton.Loaded += RadioButtonSelection_Loaded;
+            MediumRadioButton.Loaded += RadioButtonSelection_Loaded;
+            LargeRadioButton.Loaded += RadioButtonSelection_Loaded;
         }
 
         /// <summary>
@@ -48,6 +52,7 @@ namespace PointOfSale
                     {
                         case "Small":
                             coffee.Size = Size.Small;
+
                             break;
                         case "Medium":
                             coffee.Size = Size.Medium;
@@ -58,6 +63,30 @@ namespace PointOfSale
                         default:
                             throw new NotImplementedException("Size not Avialable");
                     }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Sets the button loaded to the user's choice.
+        /// </summary>
+        /// <param name="sender">The user's interaction.</param>
+        /// <param name="args">The event args.</param>
+        private void RadioButtonSelection_Loaded(object sender, RoutedEventArgs args)
+        {
+            if(DataContext is CowboyCoffee drink)
+            {
+                switch (drink.Size)
+                {
+                    case Size.Small:
+                        SmallRadioButton.IsChecked = true;
+                        break;
+                    case Size.Medium:
+                        MediumRadioButton.IsChecked = true;
+                        break;
+                    case Size.Large:
+                        LargeRadioButton.IsChecked = true;
+                        break;
                 }
             }
         }

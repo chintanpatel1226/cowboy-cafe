@@ -1,4 +1,10 @@
-﻿using System;
+﻿/// <summary>
+/// Author: Chintan Patel
+/// Reference: Nathan Bean
+/// Class: CIS 400
+/// Purpose: A class representing the CashRegisterControl.xaml class.
+/// </summary>
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -14,11 +20,11 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for CashControl.xaml
+    /// Interaction logic for CashRegisterControl.xaml
     /// </summary>
-    public partial class CashControl : UserControl
+    public partial class CashRegisterControl : UserControl
     {
-        public CashControl()
+        public CashRegisterControl()
         {
             InitializeComponent();
         }
