@@ -123,36 +123,34 @@ namespace CowboyCafe.Data
         /// <param name="paid"></param>
         /// <param name="change"></param>
         /// <returns></returns>
-        public string Receipt(bool cash, double paid, double change)
+        public string Receipt(bool credit, double paid, double change)
         {
-            string receipt = "";
-            receipt += OrderNumber + "\n";
-            receipt += DateTime.Now.ToString() + "\n\n";
+            StringBuilder receipt = new StringBuilder();
+            receipt.Append("Order # " + OrderNumber + "\n\n");
+            receipt.Append("Date and Time: " + DateTime.Now.ToString() + "\n\n");
+            receipt.Append("- - - - - Order - - - - - \n\n");
             foreach (IOrderItem item in Items)
             {
-                receipt += string.Format("{0}   ${1:#.00}\n", item.ToString(), item.Price);
+                receipt.Append(string.Format("{0} ${1:#.00}", item.ToString(), item.Price) + "\n\n");
                 foreach (string instruction in item.SpecialInstructions)
                 {
-                    receipt += "   " + instruction + "\n";
+                    receipt.Append(" " + instruction + "\n\n");
                 }
             }
-            receipt += "\n\n";
-            receipt += string.Format("Subtotal   ${0:#.00}\n", Subtotal);
-            receipt += string.Format("Total      ${0:#.00}\n", TotalWithTax);
-            if (cash)
+            receipt.Append("Subtotal: " + Subtotal + "\n\n");
+            receipt.Append("Total: " +  TotalWithTax + "\n\n");
+            if (credit)
             {
-                receipt += string.Format("\nTotal Paid     ${0:#.00}\n", paid);
-                receipt += string.Format("Total Change   ${0:#.00}\n", change);
-                receipt += string.Format("Tendered       ${0:#.00}\n", paid - change);
-                receipt += "CASH TENDERED\n\n";
+                receipt.Append("Paid with Credit");
             }
             else
             {
-                receipt += string.Format("Tendered   ${0:#.00}\n", TotalWithTax);
-                receipt += "CREDIT TENDERED\n\n";
+                receipt.Append("Total Paid: " + paid + "\n\n");
+                receipt.Append("Total Change: " + change + "\n\n");
+                receipt.Append("Paid with Cash");
             }
-            receipt += "------------------------------\n\n";
-            return receipt;
+
+            return receipt.ToString();
         }
 
         /// <summary>

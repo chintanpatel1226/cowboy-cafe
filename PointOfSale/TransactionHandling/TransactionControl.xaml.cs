@@ -62,7 +62,7 @@ namespace PointOfSale
                 switch (cardTerminal.ProcessTransaction(order.TotalWithTax))
                 {
                     case ResultCode.Success:
-                        receiptPrinter.Print(order.Receipt(false, 0, 0));
+                        receiptPrinter.Print(order.Receipt(true, 0 , 0));
                         MessageBox.Show("Transaction Was a success.");
                         screen = new OrderControl();
                         this.Content = screen;

@@ -22,13 +22,25 @@ namespace PointOfSale
         /// <summary>
         /// The CashDrawer this class uses
         /// </summary>
-        private CashDrawer drawer = new CashDrawer();
+        static CashDrawer drawer = new CashDrawer();
 
+        public double TotalOwed { get; set; }
+
+        public bool SufficientFunds
+        {
+            get
+            {
+                return TotalValue > TotalOwed;
+            }
+        }
+
+        private double totalValue = 0;
         /// <summary>
         /// The total current value of the drawer.
         /// </summary>
-        public double TotalValue => drawer.TotalValue;
+        public double TotalValue => totalValue;
 
+        public int countPennies = 0;
         /// <summary>
         /// Get or sets the number of Pennies in the cash register
         /// </summary>
@@ -51,6 +63,7 @@ namespace PointOfSale
             }
         }
 
+        public int countNickels = 0;
         /// <summary>
         /// Get or sets the number of Nickels in the cash register
         /// </summary>
@@ -73,6 +86,7 @@ namespace PointOfSale
             }
         }
 
+        public int countDimes = 0;
         /// <summary>
         /// Get or sets the number of Dimes in the cash register
         /// </summary>
@@ -95,6 +109,7 @@ namespace PointOfSale
             }
         }
 
+        public int countQuarters = 0;
         /// <summary>
         /// Get or sets the number of Quarters in the cash register
         /// </summary>
@@ -117,6 +132,7 @@ namespace PointOfSale
             }
         }
 
+        public int countHalfDollars = 0;
         /// <summary>
         /// Get or sets the number of HalfDollars in the cash register
         /// </summary>
@@ -139,6 +155,7 @@ namespace PointOfSale
             }
         }
 
+        public int countDollars = 0;
         /// <summary>
         /// Get or sets the number of Dollars in the cash register
         /// </summary>
@@ -161,6 +178,7 @@ namespace PointOfSale
             }
         }
 
+        public int countOnes = 0;
         /// <summary>
         /// Get or sets the number of Ones in the cash register
         /// </summary>
@@ -183,6 +201,7 @@ namespace PointOfSale
             }
         }
 
+        public int countTwos = 0;
         /// <summary>
         /// Get or sets the number of Twos in the cash register
         /// </summary>
@@ -205,6 +224,7 @@ namespace PointOfSale
             }
         }
 
+        public int countFives = 0;
         /// <summary>
         /// Get or sets the number of Fives in the cash register
         /// </summary>
@@ -227,6 +247,7 @@ namespace PointOfSale
             }
         }
 
+        public int countTens = 0;
         /// <summary>
         /// Get or sets the number of Tens in the cash register
         /// </summary>
@@ -249,6 +270,7 @@ namespace PointOfSale
             }
         }
 
+        public int countTwenties = 0;
         /// <summary>
         /// Get or sets the number of Twenties in the cash register.
         /// </summary>
@@ -271,6 +293,7 @@ namespace PointOfSale
             }
         }
 
+        public int countFifties = 0;
         /// <summary>
         /// Get or sets the number of Fifties in the cash register.
         /// </summary>
@@ -293,6 +316,7 @@ namespace PointOfSale
             }
         }
 
+        public int countHundred = 0;
         /// <summary>
         /// Get or sets the number of Hundreds in the cash register.
         /// </summary>
