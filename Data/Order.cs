@@ -126,29 +126,30 @@ namespace CowboyCafe.Data
         public string Receipt(bool credit, double paid, double change)
         {
             StringBuilder receipt = new StringBuilder();
-            receipt.Append("Order # " + OrderNumber + "\n\n");
-            receipt.Append("Date and Time: " + DateTime.Now.ToString() + "\n\n");
-            receipt.Append("- - - - - Order - - - - - \n\n");
+            receipt.AppendLine("Order # " + OrderNumber);
+            receipt.AppendLine("Date and Time: " + DateTime.Now.ToString());
+            receipt.AppendLine("- - - - - Order - - - - -");
             foreach (IOrderItem item in Items)
             {
-                receipt.Append(string.Format("{0} ${1:#.00}", item.ToString(), item.Price) + "\n\n");
+                receipt.AppendLine(string.Format("{0}     ${1:#.00}", item.ToString(), item.Price));
                 foreach (string instruction in item.SpecialInstructions)
                 {
-                    receipt.Append(" " + instruction + "\n\n");
+                    receipt.AppendLine(" " + instruction);
                 }
             }
-            receipt.Append("Subtotal: " + Subtotal + "\n\n");
-            receipt.Append("Total: " +  TotalWithTax + "\n\n");
+            receipt.AppendLine(string.Format("Subtotal:     ${0:#.00}", Subtotal));
+            receipt.AppendLine(string.Format("Total:     ${0:#.00}", TotalWithTax));
             if (credit)
             {
-                receipt.Append("Paid with Credit");
+                receipt.AppendLine("Paid with Credit");
             }
             else
             {
-                receipt.Append("Total Paid: " + paid + "\n\n");
-                receipt.Append("Total Change: " + change + "\n\n");
-                receipt.Append("Paid with Cash");
+                receipt.AppendLine(string.Format("Paid:     ${0:#.00}", paid));
+                receipt.AppendLine(string.Format("Change:     ${0:#.00}", change));
+                receipt.AppendLine("Paid with Cash");
             }
+            receipt.AppendLine("- - - - - - - - - - - - -");
 
             return receipt.ToString();
         }

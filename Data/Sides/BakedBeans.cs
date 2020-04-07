@@ -61,7 +61,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The size of the side. Default size set to small.
         /// </summary>
-        public Size Size
+        public override Size Size
         {
             get { return size; }
             set

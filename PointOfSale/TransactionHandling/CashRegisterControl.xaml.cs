@@ -31,9 +31,17 @@ namespace PointOfSale
         /// </summary>
         private ReceiptPrinter receiptPrinter = new ReceiptPrinter();
 
+        private Order order;
+
         public CashRegisterControl()
         {
+        }
+
+        public CashRegisterControl(Order order, double total)
+        {
             InitializeComponent();
+
+            this.order = order;
         }
 
         /// <summary>
@@ -54,7 +62,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void OnCompleteButton_Clicked(object sender, RoutedEventArgs e)
         {
-            if(DataContext is Order order)
+            if(DataContext is CashRegisterModelView view)
             {
                 receiptPrinter.Print(order.Receipt(false, 0, 0));
                 var screen = new OrderControl();
