@@ -44,6 +44,9 @@ namespace PointOfSale
             set => SetValue(DenominationProperty, value);
         }
 
+        /// <summary>
+        /// The DependencyProperty for the QuantityProperty
+        /// </summary>
         public static readonly DependencyProperty QuantityProperty = DependencyProperty.Register(
             "Quantity",
             typeof(int),
@@ -51,25 +54,48 @@ namespace PointOfSale
             new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault)
             );
 
+        /// <summary>
+        /// The quantity of the coin denomination.
+        /// </summary>
         public int Quantity
         {
             get => (int)GetValue(QuantityProperty);
             set => SetValue(QuantityProperty, value);
         }
 
+        /// <summary>
+        /// Public constructor
+        /// </summary>
         public CoinControl()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Increases the quantity of the bound coinage by one.
+        /// </summary>
+        /// <param name="sender">The coinage quantity.</param>
+        /// <param name="e">The event args.</param>
         public void OnIncreaseClicked(object sender, RoutedEventArgs e)
         {
             Quantity++;
         }
 
+        /// <summary>
+        /// Decreases the quantity of the bound coinage by one.
+        /// </summary>
+        /// <param name="sender">The coinage quantity.</param>
+        /// <param name="e">The event args.</param>
         public void OnDecreaseClicked(object sender, RoutedEventArgs e)
         {
-            Quantity--;
+            if(Quantity > 0)
+            {
+                Quantity--;
+            }
+            else
+            {
+                Quantity = 0;
+            }
         }
     }
 }

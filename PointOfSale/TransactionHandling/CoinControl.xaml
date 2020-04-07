@@ -22,9 +22,9 @@
             <Border BorderThickness="1" BorderBrush="Goldenrod" CornerRadius="50" Background="Gold" Margin="-16,0" Grid.Column="1">
                 <TextBlock VerticalAlignment="Center" TextAlignment="Center" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CoinControl}}, Path=Denomination}"/>
             </Border>
-            <Button Grid.Row="1" Grid.Column="0" Click="OnDecreaseClicked" Content="-"/>
+            <Button Grid.Row="1" Grid.Column="0" Click="OnDecreaseClicked">-</Button>
             <TextBox VerticalContentAlignment="Center" TextAlignment="Center" Grid.Row="1" Grid.Column="1" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CoinControl}}, Path=Quantity}"/>
-            <Button Grid.Row="1" Grid.Column="2" Click="OnIncreaseClicked" Content="+"/>
+            <Button Grid.Row="1" Grid.Column="2" Click="OnIncreaseClicked">+</Button>
         </Grid>
     </Border>
 </UserControl>
