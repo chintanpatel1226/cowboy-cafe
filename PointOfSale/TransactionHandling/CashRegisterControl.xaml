@@ -6,9 +6,20 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="1000">
+    
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Width" Value="120"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Margin" Value="4"/>
+        </Style>
+    </UserControl.Resources>
+    
     <Grid Background="AliceBlue">
         <Grid.RowDefinitions>
-            <RowDefinition/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
@@ -20,13 +31,17 @@
             <local:BillControl Denomination="Fifty" Quantity="{Binding Path=Fifty}"/>
             <local:BillControl Denomination="Hundred" Quantity="{Binding Path=Hundred}"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1">
             <local:CoinControl Denomination="Penny" Quantity="{Binding Path=Penny}"/>
             <local:CoinControl Denomination="Dime" Quantity="{Binding Path=Dime}"/>
             <local:CoinControl Denomination="Nickel" Quantity="{Binding Path=Nickel}"/>
             <local:CoinControl Denomination="Quarter" Quantity="{Binding Path=Quarter}"/>
             <local:CoinControl Denomination="HalfDollar" Quantity="{Binding Path=HalfDollar}"/>
             <local:CoinControl Denomination="Dollar" Quantity="{Binding Path=Dollar}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2">
+            <Button Name="CompleteOrderButton" Click="OnCompleteButton_Clicked">Complete</Button>
+            <Button Name="CancelOrderButton" Click="OnCancelButton_Clicked">Cancel</Button>
         </StackPanel>
     </Grid>
 </UserControl>

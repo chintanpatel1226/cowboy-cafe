@@ -28,11 +28,11 @@
         <CheckBox IsChecked="{Binding Path=Ice}">Ice</CheckBox>
         <TextBlock FontSize="25">Flavors:</TextBlock>
         <StackPanel Orientation="Vertical">
-            <RadioButton GroupName="Flavor" Name="BirchBeerCheckBox" Tag="BirchBeer">Birch Beer</RadioButton>
-            <RadioButton GroupName="Flavor" Name="CreamSodaCheckBox" Tag="CreamSoda">Cream Soda</RadioButton>
-            <RadioButton GroupName="Flavor" Name="OrangeSodaCheckBox" Tag="OrangeSoda">Orange Soda</RadioButton>
-            <RadioButton GroupName="Flavor" Name="RootBeerCheckBox" Tag="RootBeer">Root Beer</RadioButton>
-            <RadioButton GroupName="Flavor" Name="SarsparillaCheckBox" Tag="Sarsparilla">Sarsparilla</RadioButton>
+            <RadioButton GroupName="Flavor" Name="BirchBeerRadioButton" Tag="BirchBeer">Birch Beer</RadioButton>
+            <RadioButton GroupName="Flavor" Name="CreamSodaRadioButton" Tag="CreamSoda">Cream Soda</RadioButton>
+            <RadioButton GroupName="Flavor" Name="OrangeSodaRadioButton" Tag="OrangeSoda">Orange Soda</RadioButton>
+            <RadioButton GroupName="Flavor" Name="RootBeerRadioButton" Tag="RootBeer">Root Beer</RadioButton>
+            <RadioButton GroupName="Flavor" Name="SarsparillaRadioButton" Tag="Sarsparilla">Sarsparilla</RadioButton>
         </StackPanel>
         <TextBlock FontSize="25">Drink Sizes:</TextBlock>
         <StackPanel>

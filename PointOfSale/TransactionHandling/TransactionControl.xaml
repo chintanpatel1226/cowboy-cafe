@@ -55,7 +55,7 @@
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">
-            <Button Height="50" Width="120">Cash</Button>
+            <Button Name="CashPaymentButton" Click="CashPaymentButton_Clicked" Height="50" Width="120">Cash</Button>
             <Button Name="CreditPaymentButton" Click="CreditPaymentButton_Clicked" Height="50" Width="120" >Credit</Button>
             <Button Name="CancelOrderButton" Click="CancelOrderButton_Clicked" Height="50" Width="120">Cancel</Button>
         </StackPanel>

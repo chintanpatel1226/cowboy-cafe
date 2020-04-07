@@ -32,11 +32,17 @@ namespace PointOfSale
         {
             InitializeComponent();
 
-            BirchBeerCheckBox.Checked += OnFlavorSelection_Clicked;
-            CreamSodaCheckBox.Checked += OnFlavorSelection_Clicked;
-            OrangeSodaCheckBox.Checked += OnFlavorSelection_Clicked;
-            RootBeerCheckBox.Checked += OnFlavorSelection_Clicked;
-            SarsparillaCheckBox.Checked += OnFlavorSelection_Clicked;
+            BirchBeerRadioButton.Checked += OnFlavorSelection_Clicked;
+            CreamSodaRadioButton.Checked += OnFlavorSelection_Clicked;
+            OrangeSodaRadioButton.Checked += OnFlavorSelection_Clicked;
+            RootBeerRadioButton.Checked += OnFlavorSelection_Clicked;
+            SarsparillaRadioButton.Checked += OnFlavorSelection_Clicked;
+
+            BirchBeerRadioButton.Loaded += FlavorSelection_Loaded;
+            CreamSodaRadioButton.Loaded += FlavorSelection_Loaded;
+            OrangeSodaRadioButton.Loaded += FlavorSelection_Loaded;
+            RootBeerRadioButton.Loaded += FlavorSelection_Loaded;
+            SarsparillaRadioButton.Loaded += FlavorSelection_Loaded;
 
             SmallRadioButton.Click += OnSize_Checked;
             MediumRadioButton.Click += OnSize_Checked;
@@ -78,6 +84,36 @@ namespace PointOfSale
                         default:
                             throw new NotImplementedException("No flavor selection.");
                     }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Sets the radio button to the respective flavor selected.
+        /// </summary>
+        /// <param name="sender">The user's interaction.</param>
+        /// <param name="args">The event args.</param>
+        private void FlavorSelection_Loaded(object sender, RoutedEventArgs args)
+        {
+            if(DataContext is JerkedSoda soda)
+            {
+                switch (soda.Flavor)
+                {
+                    case SodaFlavor.BirchBeer:
+                        BirchBeerRadioButton.IsChecked = true;
+                        break;
+                    case SodaFlavor.CreamSoda:
+                        CreamSodaRadioButton.IsChecked = true;
+                        break;
+                    case SodaFlavor.OrangeSoda:
+                        OrangeSodaRadioButton.IsChecked = true;
+                        break;
+                    case SodaFlavor.RootBeer:
+                        RootBeerRadioButton.IsChecked = true;
+                        break;
+                    case SodaFlavor.Sarsparilla:
+                        SarsparillaRadioButton.IsChecked = true;
+                        break;
                 }
             }
         }

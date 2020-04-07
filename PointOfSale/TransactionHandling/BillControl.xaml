@@ -20,10 +20,10 @@
                 <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
             <Border BorderThickness="2" BorderBrush="DarkOliveGreen" Background="LimeGreen" Grid.ColumnSpan="3" Margin="3">
-                <TextBlock VerticalAlignment="Center" TextAlignment="Center"/>
+                <TextBlock VerticalAlignment="Center" TextAlignment="Center" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:BillControl}}, Path=Denomination}"/>
             </Border>
             <Button Grid.Row="1" Grid.Column="0" Click="OnDecreaseClicked" Content="-"/>
-            <TextBox VerticalContentAlignment="Center" TextAlignment="Center" Grid.Row="1" Grid.Column="1"/>
+            <TextBox VerticalContentAlignment="Center" TextAlignment="Center" Grid.Row="1" Grid.Column="1" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:BillControl}}, Path=Quantity}"/>
             <Button Grid.Row="1" Grid.Column="2" Click="OnIncreaseClicked" Content="+"/>
         </Grid>
     </Border>

@@ -55,6 +55,21 @@ namespace PointOfSale
         }
 
         /// <summary>
+        /// Allows the user to pay with cash.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CashPaymentButton_Clicked(object sender, RoutedEventArgs e)
+        {
+            FrameworkElement screen = null;
+            if(DataContext is Order order)
+            {
+                screen = new CashRegisterControl();
+                this.Content = screen;
+            }
+        }
+
+        /// <summary>
         /// Allows the user to pay with credit.
         /// </summary>
         /// <param name="sender">The user's interaction.</param>
