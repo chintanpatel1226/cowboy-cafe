@@ -26,6 +26,9 @@ namespace PointOfSale
     /// </summary>
     public partial class CashRegisterControl : UserControl
     {
+        private double total;
+
+        private double owed;
         /// <summary>
         /// Receipt printer to store the user's order.
         /// </summary>
@@ -64,13 +67,13 @@ namespace PointOfSale
         {
             if(DataContext is CashRegisterModelView view)
             {
-                receiptPrinter.Print(order.Receipt(false, 0, 0));
-                var screen = new OrderControl();
-                this.Content = screen;
+                if(total == owed)
+                {
+                    receiptPrinter.Print(order.Receipt(false, 0, 0));
+                    var screen = new OrderControl();
+                    this.Content = screen;
+                }
             }
-
         }
-
-
     }
 }

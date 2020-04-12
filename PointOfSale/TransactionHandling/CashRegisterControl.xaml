@@ -5,17 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="1000">
+             d:DesignHeight="450" d:DesignWidth="900">
     
-    <UserControl.Resources>
-        <Style TargetType="Button">
-            <Setter Property="Height" Value="50"/>
-            <Setter Property="Width" Value="120"/>
-            <Setter Property="FontSize" Value="12"/>
-            <Setter Property="Margin" Value="4"/>
-        </Style>
-    </UserControl.Resources>
-    
+ 
     <Grid Background="AliceBlue">
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
@@ -41,8 +33,8 @@
             <local:CoinControl Denomination="Dollar" Quantity="{Binding Path=Dollars}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2">
-            <Button Name="CompleteOrderButton" Click="OnCompleteButton_Clicked">Complete</Button>
-            <Button Name="CancelOrderButton" Click="OnCancelButton_Clicked">Cancel</Button>
+            <Button Name="CompleteOrderButton" Click="OnCompleteButton_Clicked" Width="120" Height="60" Margin="10">Complete</Button>
+            <Button Name="CancelOrderButton" Click="OnCancelButton_Clicked" Width="120" Height="60" Margin="10">Cancel</Button>
         </StackPanel>
     </Grid>
 </UserControl>

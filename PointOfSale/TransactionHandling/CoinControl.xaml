@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             Width="120" Height="120"
+             Height="120" Width="120"
              d:DesignHeight="120" d:DesignWidth="120">
     
     <Border BorderBrush="Gray" BorderThickness="1" Padding="5">
@@ -20,11 +20,11 @@
                 <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
             <Border BorderThickness="1" BorderBrush="Goldenrod" CornerRadius="50" Background="Gold" Margin="-16,0" Grid.Column="1">
-                <TextBlock VerticalAlignment="Center" TextAlignment="Center" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CoinControl}}, Path=Denomination}"/>
+                <TextBlock VerticalAlignment="Center" TextAlignment="Center" FontSize="14" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CoinControl}}, Path=Denomination}"/>
             </Border>
-            <Button Grid.Row="1" Grid.Column="0" Click="OnDecreaseClicked">-</Button>
-            <TextBox VerticalContentAlignment="Center" TextAlignment="Center" Grid.Row="1" Grid.Column="1" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CoinControl}}, Path=Quantity}"/>
-            <Button Grid.Row="1" Grid.Column="2" Click="OnIncreaseClicked">+</Button>
+            <Button Grid.Row="1" Grid.Column="0" Click="OnDecreaseClicked" FontSize="24" VerticalContentAlignment="Center">-</Button>
+            <TextBox VerticalContentAlignment="Center" TextAlignment="Center" FontSize="20" Grid.Row="1" Grid.Column="1" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:CoinControl}}, Path=Quantity}"/>
+            <Button Grid.Row="1" Grid.Column="2" Click="OnIncreaseClicked" FontSize="24" VerticalContentAlignment="Center">+</Button>
         </Grid>
     </Border>
 </UserControl>

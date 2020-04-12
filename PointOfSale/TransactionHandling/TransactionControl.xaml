@@ -27,7 +27,6 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-
         <ListBox Name="OrderListBox" ItemsSource="{Binding Path=Items}" Height="400" Width="280" Grid.RowSpan="2">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -59,6 +58,5 @@
             <Button Name="CreditPaymentButton" Click="CreditPaymentButton_Clicked" Height="50" Width="120" >Credit</Button>
             <Button Name="CancelOrderButton" Click="CancelOrderButton_Clicked" Height="50" Width="120">Cancel</Button>
         </StackPanel>
-        
     </Grid>
 </UserControl>

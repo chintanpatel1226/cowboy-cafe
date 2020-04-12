@@ -50,8 +50,7 @@ namespace PointOfSale
         /// <param name="e">Event data.</param>
         private void CancelOrderButton_Clicked(object sender, RoutedEventArgs e)
         {
-            var screen = new OrderControl();
-            this.Content = screen;
+            this.Content = new OrderControl();
         }
 
         /// <summary>
@@ -61,12 +60,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void CashPaymentButton_Clicked(object sender, RoutedEventArgs e)
         {
-            FrameworkElement screen = null;
-            if(DataContext is Order order)
-            {
-                screen = new CashRegisterControl();
-                this.Content = screen;
-            }
+            this.Content = new CashRegisterControl();
         }
 
         /// <summary>
