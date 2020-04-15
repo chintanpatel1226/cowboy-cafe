@@ -69,3 +69,9 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+/* List styles having none
+-------------------------------------------------- */
+ul#otis {
+    list-style-type: none;
+}
