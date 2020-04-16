@@ -49,5 +49,11 @@ namespace CowboyCafe.Data
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        /// <summary>
+        /// Returns the name of the menu item.
+        /// </summary>
+        /// <returns>The name of the menu item.</returns>
+        public abstract string Name();
     }
 }

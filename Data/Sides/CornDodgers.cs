@@ -82,5 +82,14 @@ namespace CowboyCafe.Data
         {
             return Size + " Corn Dodgers";
         }
+
+        /// <summary>
+        /// Returns the name of the menu item
+        /// </summary>
+        /// <returns>The name of the menu item</returns>
+        public override string Name()
+        {
+            return "Corn Dodgers";
+        }
     }
 }

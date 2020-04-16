@@ -5,7 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\Images\BuckingBronco.png" />
+    <None Include="wwwroot\Images\Chuckwagon_in_Girvin,_TX_SCN1077.jfif" />
+    <None Include="wwwroot\Images\Chuckwagon_Texas_1900.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj" />
   </ItemGroup>
 
 

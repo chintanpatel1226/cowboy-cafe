@@ -72,8 +72,10 @@ body {
 
 /* List styles having none
 -------------------------------------------------- */
-ul#otis {
+li {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 /* Columns
@@ -81,10 +83,6 @@ ul#otis {
 .column {
     float: left;
     width: 33.33%;
+    padding-bottom: 8em;
 }
 
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}

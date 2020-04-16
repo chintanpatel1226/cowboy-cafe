@@ -148,5 +148,14 @@ namespace CowboyCafe.Data
                     throw new NotImplementedException("Name not available");
             }
         }
+
+        /// <summary>
+        /// Returns the name of the menu item
+        /// </summary>
+        /// <returns>The name of the menu item</returns>
+        public override string Name()
+        {
+            return "Cowboy Coffee";
+        }
     }
 }
