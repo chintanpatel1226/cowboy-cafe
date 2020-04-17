@@ -62,7 +62,15 @@
                 <h4>@item.Name</h4>
                 @if(item is JerkedSoda soda)
                 {
-                    <p>Flavors: CreamSoda, Orange Soda, Sarsparilla, BirchBeer, RootBeer</p>
+                    <p>Options: CreamSoda, Orange Soda, Sarsparilla, BirchBeer, and RootBeer</p>
+                }
+                @if(item is CowboyCoffee coffee)
+                {
+                    <p>Options: Decaf and Room for Cream</p>
+                }
+                @if(item is Water water)
+                {
+                    <p>Options: Lemon</p>
                 }
                 <div class="menu-informaton">
                     <h5>Small</h5>
