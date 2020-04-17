@@ -73,10 +73,12 @@ namespace CowboyCafe.Data
             menu.Add(new RustlersRibs());
             menu.Add(new TexasTripleBurger());
             menu.Add(new TrailBurger());
+
             menu.Add(new BakedBeans());
             menu.Add(new ChiliCheeseFries());
             menu.Add(new CornDodgers());
             menu.Add(new PanDeCampo());
+
             menu.Add(new CowboyCoffee());
             menu.Add(new JerkedSoda());
             menu.Add(new TexasTea());

@@ -58,6 +58,6 @@ namespace CowboyCafe.Data
         /// Returns the name of the menu item.
         /// </summary>
         /// <returns>The name of the menu item.</returns>
-        public abstract string Name();
+        public abstract string Name { get; }
     }
 }

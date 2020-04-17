@@ -7,7 +7,7 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Cowboy Cafe</h1>
+    <h1 class="display-4">Howdy y'all! Welcome to Cowboy Cafe!</h1>
     <p>
         We at Cowboy Cafe are proud to bring you authentic trail meals from the American West. Shake off the dust
         on your boots and sake your thirst with one of our old-fashioned hand-jerked sodas. Dip your Pan de
@@ -33,7 +33,7 @@
         @foreach (Side item in Menu.Sides())
         {
             <div class="menu-item">
-                <h4>@item.Name()</h4>
+                <h4>@item.Name</h4>
                 <div class="menu-informaton">
                     <h5>Small</h5>
                     <ul>
@@ -59,7 +59,11 @@
         @foreach (Drink item in Menu.Drinks())
         {
             <div class="menu-item">
-                <h4>@item.Name()</h4>
+                <h4>@item.Name</h4>
+                @if(item is JerkedSoda soda)
+                {
+                    <p>Flavors: CreamSoda, Orange Soda, Sarsparilla, BirchBeer, RootBeer</p>
+                }
                 <div class="menu-informaton">
                     <h5>Small</h5>
                     <ul>

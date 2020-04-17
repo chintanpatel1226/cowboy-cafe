@@ -155,9 +155,6 @@ namespace CowboyCafe.Data
         /// Returns the name of the menu item
         /// </summary>
         /// <returns>The name of the menu item</returns>
-        public override string Name()
-        {
-            return "Texas Tea";
-        }
+        public override string Name => "Texas Tea";
     }
 }
