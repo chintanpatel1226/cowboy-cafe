@@ -106,9 +106,9 @@ namespace CowboyCafe.Data
         {
             if (options == null || options.Length == 0) return items;
             List<IOrderItem> result = new List<IOrderItem>();
-            foreach (string type in options)
+            foreach (string option in options)
             {
-                switch (type)
+                switch (option)
                 {
                     case "Entree":
                         foreach (IOrderItem item in items)
