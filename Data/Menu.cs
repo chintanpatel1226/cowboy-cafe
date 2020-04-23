@@ -108,28 +108,26 @@ namespace CowboyCafe.Data
             List<IOrderItem> result = new List<IOrderItem>();
             foreach (string option in options)
             {
-                switch (option)
+                if(option is "Entree")
                 {
-                    case "Entree":
-                        foreach (IOrderItem item in items)
-                        {
-                            if (item is Entree) result.Add(item);
-                        }
-                        break;
-                    case "Side":
-                        foreach (IOrderItem item in items)
-                        {
-                            if (item is Side) result.Add(item);
-                        }
-                        break;
-                    case "Drink":
-                        foreach (IOrderItem item in items)
-                        {
-                            if (item is Drink) result.Add(item);
-                        }
-                        break;
-                    default:
-                        return items;
+                    foreach (IOrderItem item in items)
+                    {
+                        if (item is Entree) result.Add(item);
+                    }
+                }
+                else if(option is "Side")
+                {
+                    foreach (IOrderItem item in items)
+                    {
+                        if (item is Side) result.Add(item);
+                    }
+                }
+                else
+                {
+                    foreach (IOrderItem item in items)
+                    {
+                        if (item is Drink) result.Add(item);
+                    }
                 }
             }
             return items;
