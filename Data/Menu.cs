@@ -14,6 +14,8 @@ namespace CowboyCafe.Data
     /// </summary>
     public static class Menu
     {
+        public static IEnumerable<IOrderItem> All => CompleteMenu(); 
+
         /// <summary>
         /// Static class returning a list of all avaiable entrees.
         /// </summary>
@@ -84,6 +86,93 @@ namespace CowboyCafe.Data
             menu.Add(new TexasTea());
             menu.Add(new Water());
             return menu;
+        }
+
+        public static IEnumerable<IOrderItem> Search(string terms)
+        {
+            List<IOrderItem> results = new List<IOrderItem>();
+            if (terms == null) return All;
+            foreach(IOrderItem item in CompleteMenu())
+            {
+                if(item.ToString() != null && item.ToString().Contains(terms, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
+        }
+
+        public static IEnumerable<IOrderItem> FilterByOptions(IEnumerable<IOrderItem> items, string[] options)
+        {
+            if (options == null || options.Length == 0) return items;
+            List<IOrderItem> result = new List<IOrderItem>();
+            foreach (string type in options)
+            {
+                switch (type)
+                {
+                    case "Entree":
+                        foreach (IOrderItem item in items)
+                        {
+                            if (item is Entree) result.Add(item);
+                        }
+                        break;
+                    case "Side":
+                        foreach (IOrderItem item in items)
+                        {
+                            if (item is Side) result.Add(item);
+                        }
+                        break;
+                    case "Drink":
+                        foreach (IOrderItem item in items)
+                        {
+                            if (item is Drink) result.Add(item);
+                        }
+                        break;
+                    default:
+                        return items;
+                }
+            }
+            return items;
+        }
+
+        public static IEnumerable<IOrderItem> FilterByIMDBRating(IEnumerable<IOrderItem> items, double? min, double? max)
+        {
+            if (min == null && max == null) return items;
+            var results = new List<IOrderItem>();
+
+            // only a minimum specified
+            if (min == null)
+            {
+                foreach (IOrderItem item in items)
+                {
+                    if (item.Price <= max)
+                    {
+                        results.Add(item);
+                    }
+                }
+                return results;
+            }
+            // only a maximum specified
+            if (max == null)
+            {
+                foreach (IOrderItem item in items)
+                {
+                    if (item.Price >= min)
+                    {
+                        results.Add(item);
+                    }
+                }
+                return results;
+            }
+
+            foreach (IOrderItem item in items)
+            {
+                if (item.Price >= min && item.Price <= max)
+                {
+                    results.Add(item);
+                }
+            }
+            return results;
         }
     }
 }
