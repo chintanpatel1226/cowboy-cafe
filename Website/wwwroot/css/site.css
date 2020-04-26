@@ -86,3 +86,18 @@ li {
     padding-bottom: 8em;
 }
 
+input{
+    text-align: center;
+}
+
+#search{
+    margin-left: 5em;
+}
+
+#options {
+    height: 30px;
+}
+
+#ranges {
+    margin-left: 5em;
+}

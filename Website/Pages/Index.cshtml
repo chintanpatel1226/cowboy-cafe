@@ -19,30 +19,34 @@
                 <input type="text" name="SearchTerms" />
                 <input type="submit" value="Search" />
             </div>
-            <label>
-                Entree
-                <input type="checkbox" name="Options" value="Entree" checked="@Model.Options.Contains("Entree")"/>
-            </label>
-            <label>
-                Sides
-                <input type="checkbox" name="Options" value="Sides" checked="@Model.Options.Contains("Sides")"   />
-            </label>
-            <label>
-                Drinks
-                <input type="checkbox" name="Options" value="Drinks" checked="@Model.Options.Contains("Drinks")"  />
-            </label>
-            <label>
-                Price Range:
-                <input name="PriceMin" type="number" min="0" max="20" step="0.1" placeholder="0" value="@Model.PriceMin" />
-                and
-                <input name="PriceMax" type="number" min="0" max="20" step="0.1" placeholder="20" value="@Model.PriceMax" />
-            </label>
-            <label>
-                Calories Range:
-                <input name="CaloriesMin" type="number" min="0" max="1000" step="1" placeholder="0" value="@Model.CaloriesMin" />
-                and
-                <input name="CaloriesMax" type="number" min="0" max="1000" step="1" placeholder="1000" value="@Model.CaloriesMax" />
-            </label>
+            <div class="options">
+                <label>
+                    Entree
+                    <input type="checkbox" name="Options" value="Entree" checked="@Model.Options.Contains("Entree")" />
+                </label>
+                <label>
+                    Sides
+                    <input type="checkbox" name="Options" value="Sides" checked="@Model.Options.Contains("Sides")" />
+                </label>
+                <label>
+                    Drinks
+                    <input type="checkbox" name="Options" value="Drinks" checked="@Model.Options.Contains("Drinks")" />
+                </label>
+            </div>
+            <div class="ranges">
+                <label>
+                    Price Range:
+                    <input name="PriceMin" type="number" min="0" max="20" step="0.1" placeholder="0" value="@Model.PriceMin" />
+                    and
+                    <input name="PriceMax" type="number" min="0" max="20" step="0.1" placeholder="20" value="@Model.PriceMax" />
+                </label>
+                <label>
+                    Calories Range:
+                    <input name="CaloriesMin" type="number" min="0" max="1000" step="1" placeholder="0" value="@Model.CaloriesMin" />
+                    and
+                    <input name="CaloriesMax" type="number" min="0" max="1000" step="1" placeholder="1000" value="@Model.CaloriesMax" />
+                </label>
+            </div>
         </div>
         <div class="options-display">
             <div class="column">
