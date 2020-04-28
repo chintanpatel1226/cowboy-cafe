@@ -2,9 +2,11 @@
 /// Author:  Chintan Patel
 /// Class: CIS 400
 /// Purpose: A static class representing menu options.
+/// References: Nathan Bean
 /// </summary>
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CowboyCafe.Data
@@ -142,7 +144,10 @@ namespace CowboyCafe.Data
             return results;
         }
 
-        public static string[] Option => new string[] { "Entree", "Side", "Drink" };
+        /// <summary>
+        /// Gets the available options.
+        /// </summary>
+        public static string[] Options => new string[] { "Entree", "Side", "Drink" };
 
         /// <summary>
         /// Filters the provided menu options based on the options selected.
@@ -150,31 +155,31 @@ namespace CowboyCafe.Data
         /// <param name="items">The menu options filitered.</param>
         /// <param name="options">The options to include.</param>
         /// <returns>A collection containing onnly the options provided.</returns>
-        public static IEnumerable<IOrderItem> FilterByOptions(IEnumerable<IOrderItem> items, string[] options)
+        public static IEnumerable<IOrderItem> FilterByOptions(IEnumerable<IOrderItem> items, IEnumerable<String> option)
         {
-            if (options == null || options.Length == 0) return items;
+            if (option == null || option.Count() == 0) return items;
             List<IOrderItem> result = new List<IOrderItem>();
-            foreach (string option in options)
+            foreach (String opt in option)
             {
-                if(option.Equals("Entree"))
+                if(opt.Equals("Entree"))
                 {
-                    foreach (IOrderItem item in items)
+                    foreach (IOrderItem item in Menu.Entrees())
                     {
-                        if (item is Entree) result.Add(item);
+                        result.Add(item);
                     }
                 }
-                else if(option.Equals("Side"))
+                else if(opt.Equals("Side"))
                 {
-                    foreach (IOrderItem item in items)
+                    foreach (IOrderItem item in Menu.Sides())
                     {
-                        if (item is Side) result.Add(item);
+                        result.Add(item);
                     }
                 }
-                else if(option.Equals("Drink"))
+                else if(opt.Equals("Drink"))
                 {
-                    foreach (IOrderItem item in items)
+                    foreach (IOrderItem item in Menu.Drinks())
                     {
-                        if (item is Drink) result.Add(item);
+                        result.Add(item);
                     }
                 }
             }

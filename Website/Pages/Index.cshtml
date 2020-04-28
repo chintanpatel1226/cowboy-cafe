@@ -19,10 +19,10 @@
             <input type="submit" value="Search" />
         </div>
         <div class="options">
-            @foreach (String option in Menu.Option)
+            @foreach (String option in Menu.Options)
             {
                 <label>
-                    <input type="checkbox" name="Options" value="@option" checked="@Model.Options.Contains(option)" />
+                   <input type="checkbox" name="Options" value="@option" checked="@Model.Options.Contains(option)"/>
                     @option
                 </label>
             }
