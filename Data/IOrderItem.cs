@@ -24,5 +24,9 @@ namespace CowboyCafe.Data
         /// </summary>
         List<string> SpecialInstructions { get; }
 
+        /// <summary>
+        /// The number of calories this order item.
+        /// </summary>
+        uint Calories { get; }
     }
 }

@@ -13,133 +13,84 @@
         Campo into a bowl of beans. Or conquer the the mighty Texas Triple Burger! You’ve had a hard ride - so take
         it easy with us.
     </p>
-    <form>
-        <div class="options-bar">
-            <div class="search">
-                <input type="text" name="SearchTerms" />
-                <input type="submit" value="Search" />
-            </div>
-            <div class="options">
+    <form id="main-menu" method="post">
+        <div class="search">
+            <input type="text" name="SearchTerms" />
+            <input type="submit" value="Search" />
+        </div>
+        <div class="options">
+            @foreach (String option in Menu.Option)
+            {
                 <label>
-                    Entree
-                    <input type="checkbox" name="Options" value="Entree" checked="@Model.Options.Contains("Entree")" />
+                    <input type="checkbox" name="Options" value="@option" checked="@Model.Options.Contains(option)" />
+                    @option
                 </label>
-                <label>
-                    Sides
-                    <input type="checkbox" name="Options" value="Sides" checked="@Model.Options.Contains("Sides")" />
-                </label>
-                <label>
-                    Drinks
-                    <input type="checkbox" name="Options" value="Drinks" checked="@Model.Options.Contains("Drinks")" />
-                </label>
-            </div>
-            <div class="ranges">
-                <label>
-                    Price Range:
-                    <input name="PriceMin" type="number" min="0" max="20" step="0.1" placeholder="0" value="@Model.PriceMin" />
-                    and
-                    <input name="PriceMax" type="number" min="0" max="20" step="0.1" placeholder="20" value="@Model.PriceMax" />
-                </label>
-                <label>
-                    Calories Range:
-                    <input name="CaloriesMin" type="number" min="0" max="1000" step="1" placeholder="0" value="@Model.CaloriesMin" />
-                    and
-                    <input name="CaloriesMax" type="number" min="0" max="1000" step="1" placeholder="1000" value="@Model.CaloriesMax" />
-                </label>
-            </div>
+            }
+        </div>
+        <div class="ranges">
+            <label>
+                Price Range:
+                <input name="PriceMin" type="number" min="0" max="20" step="0.1" placeholder="0" value="@Model.PriceMin" />
+                and
+                <input name="PriceMax" type="number" min="0" max="20" step="0.1" placeholder="20" value="@Model.PriceMax" />
+            </label>
+            <label>
+                Calories Range:
+                <input name="CaloriesMin" type="number" min="0" max="2000" step="1" placeholder="0" value="@Model.CaloriesMin" />
+                and
+                <input name="CaloriesMax" type="number" min="0" max="2000" step="1" placeholder="2000" value="@Model.CaloriesMax" />
+            </label>
         </div>
         <div class="options-display">
             <div class="column">
                 <h2 class="menu-category">Entrees</h2>
-                @foreach (Entree item in Menu.Entrees())
+                @foreach (IOrderItem item in @Model.Items)
                 {
-                    <div class="menu-item">
-                        <h4>@item.ToString()</h4>
-                        <div class="menu-informaton">
-                            <ul>
-                                <li>Price: $@string.Format("{0:#.00}", item.Price), Calories - @item.Calories</li>
-                            </ul>
+                    @if (item is Entree entree)
+                    {
+                        <div class="menu-item">
+                            <h4>@entree.ToString()</h4>
+                            <div class="menu-informaton">
+                                <ul>
+                                    <li>Price: $@string.Format("{0:#.00}", entree.Price), Calories - @entree.Calories</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
+                    }
                 }
             </div>
             <div class="column">
                 <h2 class="menu-category">Sides</h2>
-                @foreach (Side item in Menu.Sides())
+                @foreach (IOrderItem item in @Model.Items)
                 {
-                    <div class="menu-item">
-                        <h4>@item.Name</h4>
-                        <div class="menu-informaton">
-                            <h5>Small</h5>
-                            <ul>
-                                @{ item.Size = Size.Small;}
-                                <li>Price: $@string.Format("{0:#.00}", item.Price), Calories - @item.Calories</li>
-                            </ul>
-                            <h5>Medium</h5>
-                            <ul>
-                                @{ item.Size = Size.Medium;}
-                                <li>Price: $@string.Format("{0:#.00}", item.Price), Calories - @item.Calories</li>
-                            </ul>
-                            <h5>Large</h5>
-                            <ul>
-                                @{ item.Size = Size.Large;}
-                                <li>Price: $@string.Format("{0:#.00}", item.Price), Calories - @item.Calories</li>
-                            </ul>
+                    @if (item is Side side)
+                    {
+                        <div class="menu-item">
+                            <h4>@side.ToString()</h4>
+                            <div class="menu-informaton">
+                                <ul>
+                                    <li>Price: $@string.Format("{0:#.00}", side.Price), Calories - @side.Calories</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
+                    }
                 }
             </div>
             <div class="column">
                 <h2 class="menu-category">Drinks</h2>
-                @foreach (Drink item in Menu.Drinks())
+                @foreach (IOrderItem item in @Model.Items)
                 {
-                    <div class="menu-item">
-                        <h4>@item.Name</h4>
-                        @if (item is JerkedSoda soda)
-                        {
-                            <p>Options: CreamSoda, Orange Soda, Sarsparilla, BirchBeer, and RootBeer</p>
-                        }
-                        @if (item is CowboyCoffee coffee)
-                        {
-                            <p>Options: Decaf and Room for Cream</p>
-                        }
-                        @if (item is Water water)
-                        {
-                            <p>Options: Lemon</p>
-                        }
-                        <div class="menu-informaton">
-                            <h5>Small</h5>
-                            <ul>
-                                @{ item.Size = Size.Small;}
-                                <li>Price: $@string.Format("{0:#.00}", item.Price), Calories - @item.Calories</li>
-                                @if (item is TexasTea smallTea)
-                                {
-                                    smallTea.Sweet = false;
-                                    <li>(Unsweetened) Price: $@string.Format("{0:#.00}", item.Price), Calories - @item.Calories</li>
-                                }
-                            </ul>
-                            <h5>Medium</h5>
-                            <ul>
-                                @{ item.Size = Size.Medium;}
-                                <li>Price: $@string.Format("{0:#.00}", item.Price), Calories - @item.Calories</li>
-                                @if (item is TexasTea mediumTea)
-                                {
-                                    mediumTea.Sweet = false;
-                                    <li>(Unsweetened) Price: $@string.Format("{0:#.00}", item.Price), Calories - @item.Calories</li>
-                                }
-                            </ul>
-                            <h5>Large</h5>
-                            <ul>
-                                @{ item.Size = Size.Large;}
-                                <li>Price: $@string.Format("{0:#.00}", item.Price), Calories - @item.Calories</li>
-                                @if (item is TexasTea largeTea)
-                                {
-                                    largeTea.Sweet = false;
-                                    <li>(Unsweetened) Price: $@string.Format("{0:#.00}", item.Price), Calories - @item.Calories</li>
-                                }
-                            </ul>
+                    @if (item is Drink drink)
+                    {
+                        <div class="menu-item">
+                            <h4>@drink.ToString()</h4>
+                            <div class="menu-informaton">
+                                <ul>
+                                    <li>Price: $@string.Format("{0:#.00}", drink.Price), Calories - @drink.Calories</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
+                    }
                 }
             </div>
         </div>
