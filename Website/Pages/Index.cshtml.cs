@@ -59,21 +59,25 @@ namespace Website.Pages
         public double? CaloriesMin { get; set; }
         
         /// <summary>
-        /// Gets the search results for display on the page.
+        /// Gets the search results for display on the index page.
         /// </summary>
         public void OnGet()
         {
             Items = Menu.All;
+            SearchTerms = Request.Query["SearchTerms"];
             Options = Request.Query["Options"];
             
         }
 
+        /// <summary>
+        /// Gets the post results for display on the index page.
+        /// </summary>
         public void OnPost()
         {
             Items = Menu.Search(SearchTerms);
+            Items = Menu.FilterByOptions(Items, Options);
             Items = Menu.FilterByPrice(Items, PriceMin, PriceMax);
             Items = Menu.FilterByCalories(Items, CaloriesMin, CaloriesMax);
-            Items = Menu.FilterByOptions(Items, Options);
         }
     }
 }

@@ -183,7 +183,7 @@ namespace CowboyCafe.Data
                     }
                 }
             }
-            return items;
+            return result;
         }
 
         /// <summary>
