@@ -25,38 +25,38 @@ namespace Website.Pages
         /// <summary>
         /// The menu item to be searched for.
         /// </summary>
-        [BindProperty]
+        [BindProperty(SupportsGet = true)]
         public string SearchTerms { get; set; }
 
         /// <summary>
         /// The avaailable options in the menu.
         /// </summary>
-        [BindProperty]
+        [BindProperty(SupportsGet = true)]
         public string[] Options { get; set; }
 
         /// <summary>
         /// THe max price range.
         /// </summary>
-        [BindProperty]
+        [BindProperty(SupportsGet = true)]
         public double? PriceMax { get; set; }
 
         /// <summary>
         /// The minimum price range.
         /// </summary>
-        [BindProperty]
+        [BindProperty(SupportsGet = true)]
         public double? PriceMin { get; set; }
 
         /// <summary>
         /// The max calories range.
         /// </summary>
-        [BindProperty]
-        public double? CaloriesMax { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public uint? CaloriesMax { get; set; }
 
         /// <summary>
         /// The minimum calories range.
         /// </summary>
-        [BindProperty]
-        public double? CaloriesMin { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public uint? CaloriesMin { get; set; }
         
         /// <summary>
         /// Gets the search results for display on the index page.
@@ -66,7 +66,6 @@ namespace Website.Pages
             Items = Menu.All;
             SearchTerms = Request.Query["SearchTerms"];
             Options = Request.Query["Options"];
-            
         }
 
         /// <summary>
@@ -74,7 +73,7 @@ namespace Website.Pages
         /// </summary>
         public void OnPost()
         {
-            Items = Menu.Search(SearchTerms);
+            Items = Menu.Search(Items, SearchTerms);
             Items = Menu.FilterByOptions(Items, Options);
             Items = Menu.FilterByPrice(Items, PriceMin, PriceMax);
             Items = Menu.FilterByCalories(Items, CaloriesMin, CaloriesMax);
